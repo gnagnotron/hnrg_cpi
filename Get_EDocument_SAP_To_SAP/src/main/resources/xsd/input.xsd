@@ -1,0 +1,93 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Documents">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Document" maxOccurs="unbounded" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Header">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:byte" name="Flow"/>
+										<xs:element type="xs:string" name="Source"/>
+										<xs:element type="xs:string" name="InvoiceId"/>
+										<xs:element type="xs:int" name="IssueDate"/>
+										<xs:element type="xs:int" name="Number"/>
+										<xs:element type="xs:string" name="Type"/>
+										<xs:element type="xs:int" name="ProtocolDate"/>
+										<xs:element type="xs:int" name="ProtocolNumber"/>
+										<xs:element type="xs:string" name="CompanyCode"/>
+										<xs:element type="xs:string" name="CompanyDisplay"/>
+										<xs:element type="xs:string" name="CompanyNationality"/>
+										<xs:element type="xs:string" name="Currency"/>
+										<xs:element type="xs:float" name="ExchangeRate"/>
+										<xs:element type="xs:float" name="Total"/>
+										<xs:element type="xs:byte" name="PaymentModeCode"/>
+										<xs:element type="xs:int" name="ExpireDate"/>
+										<xs:element type="xs:string" name="OperationMode"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Rows">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Row" maxOccurs="unbounded" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="Type"/>
+													<xs:element type="xs:string" name="Description"/>
+													<xs:element type="xs:float" name="Quantity"/>
+													<xs:element type="xs:float" name="Price"/>
+													<xs:element type="xs:float" name="Amount"/>
+													<xs:element type="xs:byte" name="VatCode"/>
+													<xs:element type="xs:string" name="Trade"/>
+													<xs:element type="xs:string" name="TransportMode"/>
+													<xs:element type="xs:string" name="Container"/>
+													<xs:element type="xs:string" name="BL"/>
+													<xs:element name="Breakdowns">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Breakdown" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="ValueType"/>
+																			<xs:element type="xs:int" name="AccountCode"/>
+																			<xs:element type="xs:float" name="Quantity"/>
+																			<xs:element type="xs:float" name="Price"/>
+																			<xs:element type="xs:float" name="Amount"/>
+																			<xs:element type="xs:int" name="Competence"/>
+																			<xs:element type="xs:int" name="AccountDetailCode"/>
+																			<xs:element type="xs:string" name="OrderNumber"/>
+																			<xs:element type="xs:string" name="BusinessArea"/>
+																			<xs:element type="xs:string" name="Service"/>
+																			<xs:element type="xs:string" name="Vassel_Name"/>
+																			<xs:element type="xs:string" name="Voiage_In"/>
+																			<xs:element type="xs:string" name="Ata_Date"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="PDF">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="PdfText"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute type="xs:short" name="InvoiceYearID"/>
+						<xs:attribute type="xs:short" name="Year"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
