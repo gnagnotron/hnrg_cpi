@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bundle-SymbolicName: IFXXX_CPI_to_IDOC_SAP; singleton:=true
+Bundle-SymbolicName: IFXXX_CPI_to_IDOC_SAP
 Bundle-ManifestVersion: 2
 Origin-Bundle-SymbolicName: IFXXX_CPI_to_IDOC_SAP
 Origin-Bundle-Version: 1.0.5
