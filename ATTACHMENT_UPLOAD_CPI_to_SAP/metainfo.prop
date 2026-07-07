@@ -1,0 +1,5 @@
+#Store metainfo properties
+#Tue Jul 07 07:51:56 UTC 2026
+description=HOW TO USE\:\nHEADERS\:\n - LinkedSAPObjectKey\: Oggetto SAP a cui allegare\n - BusinessObjectTypeName\: Tipo oggetto (EQUI, ecc)\n - Content-Type\n - Slug\:filename\nPAYLOAD\:\n - inviare BASE64 dell'oggetto che si vuole caricare
+source=SAPCloudPlatformIntegration
+target=SAPS4HANACloudPrivateEdition
