@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://www.todaytrain.it/" targetNamespace="http://www.todaytrain.it/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.todaytrain.it/">
+      <s:import namespace="http://microsoft.com/wsdl/types/"/>
+      <s:element name="CreatePayableInvoiceFromReceivable">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="receivableInvoiceId" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePayableInvoiceFromReceivableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" name="CreatePayableInvoiceFromReceivableResult" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistPurchaseInvoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="supplierCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="issueDate" type="s:dateTime"/>
+            <s:element maxOccurs="1" minOccurs="0" name="number" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="SDIPurchaseInvoiceId" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="SDIReceivingDate" type="s:dateTime"/>
+            <s:element maxOccurs="1" minOccurs="1" name="expireDate" type="s:dateTime"/>
+            <s:element maxOccurs="1" minOccurs="0" name="systemAccountingSDIPurchaseId" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistPurchaseInvoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="ExistPurchaseInvoiceResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePurchaseInvoiceFromSDI">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="supplierCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="issueDate" type="s:dateTime"/>
+            <s:element maxOccurs="1" minOccurs="0" name="number" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="documentType" type="s:int"/>
+            <s:element maxOccurs="1" minOccurs="0" name="currencyCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="totalAmount" type="s:decimal"/>
+            <s:element maxOccurs="1" minOccurs="1" name="stampAmount" type="s:decimal"/>
+            <s:element maxOccurs="1" minOccurs="1" name="expensesAmount" type="s:decimal"/>
+            <s:element maxOccurs="1" minOccurs="0" name="pdfInvoice" type="s:base64Binary"/>
+            <s:element maxOccurs="1" minOccurs="0" name="vats" type="tns:ArrayOfVatExchangeData"/>
+            <s:element maxOccurs="1" minOccurs="0" name="SDIPurchaseInvoiceId" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" name="SDIReceivingDate" type="s:dateTime"/>
+            <s:element maxOccurs="1" minOccurs="1" name="expireDate" type="s:dateTime"/>
+            <s:element maxOccurs="1" minOccurs="0" name="systemAccountingSDIPurchaseId" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="errorMessage" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVatExchangeData">
+        <s:sequence>
+          <s:element maxOccurs="unbounded" minOccurs="0" name="VatExchangeData" nillable="true" type="tns:VatExchangeData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VatExchangeData">
+        <s:sequence>
+          <s:element maxOccurs="1" minOccurs="0" name="VatCode" type="s:string"/>
+          <s:element maxOccurs="1" minOccurs="1" name="Revenue" type="s:decimal"/>
+          <s:element maxOccurs="1" minOccurs="1" name="Tax" type="s:decimal"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreatePurchaseInvoiceFromSDIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="CreatePurchaseInvoiceFromSDIResult" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="errorMessage" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDI">
+        <s:complexType/>
+      </s:element>
+      <s:element name="GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDIResult" type="tns:ArrayOfString"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDI">
+        <s:complexType/>
+      </s:element>
+      <s:element name="GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDIResult" type="tns:ArrayOfGuid"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGuid">
+        <s:sequence>
+          <s:element maxOccurs="unbounded" minOccurs="0" name="guid" type="s1:guid"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RemoveSaleInvoiceAccounting">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" name="saleInvoiceId" type="s1:guid"/>
+            <s:element maxOccurs="1" minOccurs="0" name="userName" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="errorMessage" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveSaleInvoiceAccountingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" name="RemoveSaleInvoiceAccountingResult" type="s:boolean"/>
+            <s:element maxOccurs="1" minOccurs="0" name="errorMessage" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSaleInvoiceNotificationSDIProcess">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" name="saleInvoiceId" type="s1:guid"/>
+            <s:element maxOccurs="1" minOccurs="1" name="SDIResult" type="s:int"/>
+            <s:element maxOccurs="1" minOccurs="0" name="SDIMessage" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" name="errorMessage" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSaleInvoiceNotificationSDIProcessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" name="SetSaleInvoiceNotificationSDIProcessResult" type="s:boolean"/>
+            <s:element maxOccurs="1" minOccurs="0" name="errorMessage" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetInvoiceAccountingResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" name="invoiceFlow" type="s:int"/>
+            <s:element maxOccurs="1" minOccurs="1" name="invoiceId" type="s1:guid"/>
+            <s:element maxOccurs="1" minOccurs="1" name="error" type="s:boolean"/>
+            <s:element maxOccurs="1" minOccurs="0" name="message" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetInvoiceAccountingResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" name="error" type="s:boolean"/>
+            <s:element maxOccurs="1" minOccurs="0" name="message" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreatePayableInvoiceFromReceivableSoapIn">
+    <wsdl:part element="tns:CreatePayableInvoiceFromReceivable" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CreatePayableInvoiceFromReceivableSoapOut">
+    <wsdl:part element="tns:CreatePayableInvoiceFromReceivableResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ExistPurchaseInvoiceSoapIn">
+    <wsdl:part element="tns:ExistPurchaseInvoice" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ExistPurchaseInvoiceSoapOut">
+    <wsdl:part element="tns:ExistPurchaseInvoiceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CreatePurchaseInvoiceFromSDISoapIn">
+    <wsdl:part element="tns:CreatePurchaseInvoiceFromSDI" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CreatePurchaseInvoiceFromSDISoapOut">
+    <wsdl:part element="tns:CreatePurchaseInvoiceFromSDIResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDISoapIn">
+    <wsdl:part element="tns:GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDI" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDISoapOut">
+    <wsdl:part element="tns:GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDIResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDISoapIn">
+    <wsdl:part element="tns:GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDI" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDISoapOut">
+    <wsdl:part element="tns:GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDIResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="RemoveSaleInvoiceAccountingSoapIn">
+    <wsdl:part element="tns:RemoveSaleInvoiceAccounting" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="RemoveSaleInvoiceAccountingSoapOut">
+    <wsdl:part element="tns:RemoveSaleInvoiceAccountingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SetSaleInvoiceNotificationSDIProcessSoapIn">
+    <wsdl:part element="tns:SetSaleInvoiceNotificationSDIProcess" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SetSaleInvoiceNotificationSDIProcessSoapOut">
+    <wsdl:part element="tns:SetSaleInvoiceNotificationSDIProcessResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SetInvoiceAccountingResultSoapIn">
+    <wsdl:part element="tns:SetInvoiceAccountingResult" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SetInvoiceAccountingResultSoapOut">
+    <wsdl:part element="tns:SetInvoiceAccountingResultResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="TrainWSSoap">
+    <wsdl:operation name="CreatePayableInvoiceFromReceivable">
+      <wsdl:input message="tns:CreatePayableInvoiceFromReceivableSoapIn"/>
+      <wsdl:output message="tns:CreatePayableInvoiceFromReceivableSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="ExistPurchaseInvoice">
+      <wsdl:input message="tns:ExistPurchaseInvoiceSoapIn"/>
+      <wsdl:output message="tns:ExistPurchaseInvoiceSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePurchaseInvoiceFromSDI">
+      <wsdl:input message="tns:CreatePurchaseInvoiceFromSDISoapIn"/>
+      <wsdl:output message="tns:CreatePurchaseInvoiceFromSDISoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDI">
+      <wsdl:input message="tns:GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDISoapIn"/>
+      <wsdl:output message="tns:GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDISoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDI">
+      <wsdl:input message="tns:GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDISoapIn"/>
+      <wsdl:output message="tns:GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDISoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSaleInvoiceAccounting">
+      <wsdl:input message="tns:RemoveSaleInvoiceAccountingSoapIn"/>
+      <wsdl:output message="tns:RemoveSaleInvoiceAccountingSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="SetSaleInvoiceNotificationSDIProcess">
+      <wsdl:input message="tns:SetSaleInvoiceNotificationSDIProcessSoapIn"/>
+      <wsdl:output message="tns:SetSaleInvoiceNotificationSDIProcessSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="SetInvoiceAccountingResult">
+      <wsdl:input message="tns:SetInvoiceAccountingResultSoapIn"/>
+      <wsdl:output message="tns:SetInvoiceAccountingResultSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TrainWSSoap" type="tns:TrainWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CreatePayableInvoiceFromReceivable">
+      <soap:operation soapAction="http://www.todaytrain.it/CreatePayableInvoiceFromReceivable" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistPurchaseInvoice">
+      <soap:operation soapAction="http://www.todaytrain.it/ExistPurchaseInvoice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePurchaseInvoiceFromSDI">
+      <soap:operation soapAction="http://www.todaytrain.it/CreatePurchaseInvoiceFromSDI" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDI">
+      <soap:operation soapAction="http://www.todaytrain.it/GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDI" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDI">
+      <soap:operation soapAction="http://www.todaytrain.it/GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDI" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSaleInvoiceAccounting">
+      <soap:operation soapAction="http://www.todaytrain.it/RemoveSaleInvoiceAccounting" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSaleInvoiceNotificationSDIProcess">
+      <soap:operation soapAction="http://www.todaytrain.it/SetSaleInvoiceNotificationSDIProcess" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInvoiceAccountingResult">
+      <soap:operation soapAction="http://www.todaytrain.it/SetInvoiceAccountingResult" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TrainWSSoap12" type="tns:TrainWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CreatePayableInvoiceFromReceivable">
+      <soap12:operation soapAction="http://www.todaytrain.it/CreatePayableInvoiceFromReceivable" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistPurchaseInvoice">
+      <soap12:operation soapAction="http://www.todaytrain.it/ExistPurchaseInvoice" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePurchaseInvoiceFromSDI">
+      <soap12:operation soapAction="http://www.todaytrain.it/CreatePurchaseInvoiceFromSDI" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDI">
+      <soap12:operation soapAction="http://www.todaytrain.it/GetSDIPurchaseInvoiceIdsOfToBeCheckOrUnCheckedAmountsWithSDI" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDI">
+      <soap12:operation soapAction="http://www.todaytrain.it/GetSDIPurchaseInvoiceIdsOfToBeCheckWithSDI" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSaleInvoiceAccounting">
+      <soap12:operation soapAction="http://www.todaytrain.it/RemoveSaleInvoiceAccounting" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSaleInvoiceNotificationSDIProcess">
+      <soap12:operation soapAction="http://www.todaytrain.it/SetSaleInvoiceNotificationSDIProcess" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInvoiceAccountingResult">
+      <soap12:operation soapAction="http://www.todaytrain.it/SetInvoiceAccountingResult" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TrainWS">
+    <wsdl:port binding="tns:TrainWSSoap" name="TrainWSSoap">
+      <soap:address location="http://train.todelta.it/TMTTest/TodayTrain/TrainWS.asmx"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:TrainWSSoap12" name="TrainWSSoap12">
+      <soap12:address location="http://train.todelta.it/TMTTest/TodayTrain/TrainWS.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,6 +1,0 @@
-#Thu Jul 04 15:51:19 UTC 2024
-SCC_LocationID=PS4
-S4Mandt=100
-process_direct_input=/idoctosap
-S4Host=vhab2ps4ci.sap.e-mobility.abb.com\:44300
-S4Credentials=PS4_100
