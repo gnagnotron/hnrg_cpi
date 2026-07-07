@@ -1,2 +1,2 @@
-# hnrg_cpi
+# HNRG CPI
 Repository to store all CPI artifacts
