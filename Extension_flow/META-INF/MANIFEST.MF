@@ -33,7 +33,7 @@ Import-Package: com.sap.esb.application.services.cxf.interceptor,com.sap
 Origin-Bundle-Name: Extension_flow
 SAP-RuntimeProfile: iflmap
 Bundle-Name: Extension_flow
-Bundle-Version: 1.0.3
+Bundle-Version: 1.0.4
 SAP-NodeType: IFLMAP
 Origin-ModifiedDate: 1728911240701
 SAP-BundleType: IntegrationFlow
