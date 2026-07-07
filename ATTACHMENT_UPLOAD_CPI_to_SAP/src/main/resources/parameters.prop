@@ -1,0 +1,5 @@
+#Thu Apr 10 13:33:14 UTC 2025
+proxy=sapcc
+s4_host=HOST\:44300
+s4_mandt=MANDANTE
+s4_credentials=UTENZA_ACCESSO_SAP
