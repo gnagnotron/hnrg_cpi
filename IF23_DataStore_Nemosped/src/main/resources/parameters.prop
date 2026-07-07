@@ -1,0 +1,14 @@
+#
+#Tue Jul 07 09:50:17 UTC 2026
+auto_disconnect=1
+credential_name=NEMO_USER
+directory=/SAP_TO_NEMOSPED
+ds_name=Nemosped
+host=89.207.236.56
+is_log_active=true
+max_attempts=3
+poll_quantity=120
+port=2222
+reconnect_delay=1000
+scheduler=<row><cell>dayValue</cell><cell></cell></row><row><cell>monthValue</cell><cell></cell></row><row><cell>yearValue</cell><cell></cell></row><row><cell>dateType</cell><cell>DAILY</cell></row><row><cell>secondValue</cell><cell>0</cell></row><row><cell>minutesValue</cell><cell></cell></row><row><cell>hourValue</cell><cell></cell></row><row><cell>toInterval</cell><cell>24</cell></row><row><cell>fromInterval</cell><cell>0</cell></row><row><cell>OnEveryMinute</cell><cell>5</cell></row><row><cell>timeType</cell><cell>TIME_INTERVAL</cell></row><row><cell>timeZone</cell><cell>( UTC 0\:00 ) Greenwich Mean Time(Etc/GMT)</cell></row><row><cell>triggerType</cell><cell>cron</cell></row><row><cell>noOfSchedules</cell><cell>1</cell></row><row><cell>schedule1</cell><cell>0+0/5+0-23+?+*+*+*&amp;trigger.timeZone\=Etc/GMT</cell></row>
+timeout=4800

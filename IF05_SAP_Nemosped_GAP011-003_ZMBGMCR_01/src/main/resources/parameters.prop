@@ -1,0 +1,14 @@
+#
+#Tue Jul 07 09:49:58 UTC 2026
+Address_suffix_dev_env=
+Credential_Name=NEMO_USER
+Directory=/SAP_TO_NEMOSPED
+IDOC_Address=IDOC_GAP011-003_ZMBGMCR_01 
+IS_LOG_ACTIVE=true
+auto_disconnect=1
+ds_name=Nemosped
+host=89.207.236.56
+max_attempts=30
+port=2222
+reconnect_delay=1000
+timeout=100000
