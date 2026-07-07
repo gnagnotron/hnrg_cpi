@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><parameters><parameter>
+    <key/>
+    <name>s4_host</name>
+    <type>xsd:string</type>
+    <isRequired>false</isRequired>
+    <constraint/>
+    <description/>
+    <additionalMetadata/>
+  </parameter><parameter>
+    <key/>
+    <name>s4_mandt</name>
+    <type>xsd:string</type>
+    <isRequired>false</isRequired>
+    <constraint/>
+    <description/>
+    <additionalMetadata/>
+  </parameter><parameter>
+    <key/>
+    <name>proxy</name>
+    <type>xsd:string</type>
+    <isRequired>false</isRequired>
+    <constraint/>
+    <description/>
+    <additionalMetadata>
+      <isCombobox>true</isCombobox>
+    </additionalMetadata>
+  </parameter><parameter>
+    <key/>
+    <name>s4_credentials</name>
+    <type>xsd:string</type>
+    <isRequired>false</isRequired>
+    <constraint/>
+    <description/>
+    <additionalMetadata/>
+  </parameter><param_references><reference attribute_category="S4_POST_ATTACHMENT" attribute_id="ctype::AdapterVariant/cname::HTTP/tp::HTTP/mp::None/direction::Receiver/version::1.16.1/attrId::proxyType" attribute_uilabel="Proxy Type" param_key="proxy"/><reference attribute_category="S4_POST_ATTACHMENT" attribute_id="ctype::AdapterVariant/cname::HTTP/tp::HTTP/mp::None/direction::Receiver/version::1.16.1/attrId::httpAddressQuery" attribute_uilabel="Query" param_key="s4_mandt"/><reference attribute_category="S4_POST_ATTACHMENT.Receiver.Auth" attribute_id="ctype::AdapterVariant/cname::HTTP/tp::HTTP/mp::None/direction::Receiver/version::1.16.1/attrId::credentialName" attribute_uilabel="Credential Name" param_key="s4_credentials"/><reference attribute_category="S4_POST_ATTACHMENT" attribute_id="ctype::AdapterVariant/cname::HTTP/tp::HTTP/mp::None/direction::Receiver/version::1.16.1/attrId::httpAddressWithoutQuery" attribute_uilabel="Address" param_key="s4_host"/><reference attribute_category="S4_TOKEN_FETCH" attribute_id="ctype::AdapterVariant/cname::HTTP/tp::HTTP/mp::None/direction::Receiver/version::1.16.1/attrId::proxyType" attribute_uilabel="Proxy Type" param_key="proxy"/><reference attribute_category="S4_TOKEN_FETCH" attribute_id="ctype::AdapterVariant/cname::HTTP/tp::HTTP/mp::None/direction::Receiver/version::1.16.1/attrId::httpAddressQuery" attribute_uilabel="Query" param_key="s4_mandt"/><reference attribute_category="S4_TOKEN_FETCH.Receiver.Auth" attribute_id="ctype::AdapterVariant/cname::HTTP/tp::HTTP/mp::None/direction::Receiver/version::1.16.1/attrId::credentialName" attribute_uilabel="Credential Name" param_key="s4_credentials"/><reference attribute_category="S4_TOKEN_FETCH" attribute_id="ctype::AdapterVariant/cname::HTTP/tp::HTTP/mp::None/direction::Receiver/version::1.16.1/attrId::httpAddressWithoutQuery" attribute_uilabel="Address" param_key="s4_host"/></param_references></parameters>
