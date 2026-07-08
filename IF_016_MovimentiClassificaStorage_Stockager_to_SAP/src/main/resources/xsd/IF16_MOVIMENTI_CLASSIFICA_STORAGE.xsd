@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Movimenti_Classifica">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Movimento_Classifica" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Movimento_Classifica">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="id_sito" />
+                <xs:element ref="id_proprieta" />
+                <xs:element ref="id_sku" />
+                <xs:element ref="id_classifica_da" />
+                <xs:element ref="id_classifica_a" />
+                <xs:element ref="qt_movimento" />
+                <xs:element ref="id_schema" minOccurs="0" />
+                <xs:element ref="id_minimo" minOccurs="0" />
+                <xs:element ref="ds_sn" minOccurs="0" />
+                <xs:element ref="ds_lotto" minOccurs="0" />
+                <xs:element ref="id_causale" minOccurs="0" />
+                <xs:element ref="id_riferimento" minOccurs="0" />
+                <xs:element ref="id_tipo_magazzino" minOccurs="0" />
+                <xs:element ref="id_udc" minOccurs="0" />
+                <xs:element ref="ds_note" minOccurs="0" />
+                <xs:element ref="ds_commessa" minOccurs="0" />
+                <xs:element ref="dt_produzione" minOccurs="0" />
+                <xs:element ref="dt_scadenza" minOccurs="0" />
+				<xs:element ref="id_special_stock_da" />			
+				<xs:element ref="id_stock_type_da"  />				
+				<xs:element ref="id_split_evaluation_da" />		
+				<xs:element ref="tp_proprieta_da" />
+				<xs:element ref="id_special_stock_a" />			
+				<xs:element ref="id_stock_type_a"  />				
+				<xs:element ref="id_split_evaluation_a" />		
+				<xs:element ref="tp_proprieta_a" />
+				<xs:element ref="id_storage_location_da" />
+				<xs:element ref="id_storage_location_a" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <!-- Movimento_Classifica_Storage.-->
+    <xs:element name="id_sito">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="4" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_proprieta">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="2" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_sku">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="25" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_classifica_da">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="4" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_classifica_a">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="4" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="qt_movimento">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_schema">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_minimo">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_sn">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_lotto">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_causale">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="6" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_riferimento">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="30" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_tipo_magazzino">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_udc">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_note">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="256" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>    
+    <xs:element name="ds_commessa">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="dt_produzione">
+        <xs:simpleType>
+            <xs:restriction base="xs:date">
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="dt_scadenza">
+        <xs:simpleType>
+            <xs:restriction base="xs:date">
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_special_stock_da">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="2" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_stock_type_da">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="1" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_split_evaluation_da">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="10" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="tp_proprieta_da">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="1" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+		<xs:element name="id_special_stock_a">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="2" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_stock_type_a">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="1" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_split_evaluation_a">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="10" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="tp_proprieta_a">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="1" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_storage_location_da">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="4" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_storage_location_a">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="4" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+</xs:schema>

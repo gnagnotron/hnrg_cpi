@@ -1,0 +1,4 @@
+#Fri Feb 09 14:36:54 UTC 2024
+environment=TEST
+credentials=tst_stockager
+credentials_prod=prd_stockager

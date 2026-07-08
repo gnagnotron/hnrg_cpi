@@ -1,0 +1,36 @@
+import com.sap.it.api.mapping.*;
+import com.sap.it.api.ITApiFactory
+import com.sap.it.api.mapping.ValueMappingApi
+
+def String getProperty(String propertyName, MappingContext context) {
+    def propertyValue = context.getProperty(propertyName);
+    return propertyValue;
+}
+
+def String getHeader(String headerName, MappingContext context) {
+    def headerValue = context.getHeader(headerName);
+    return headerValue;
+}
+
+def String getTodayDate(String input)
+{
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

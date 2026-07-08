@@ -1,0 +1,113 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ZIDOC_STOCKAGER">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="IDOC">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EDI_DC40">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="TABNAM"/>
+                    <xs:element type="xs:byte" name="MANDT"/>
+                    <xs:element type="xs:int" name="DOCNUM"/>
+                    <xs:element type="xs:short" name="DOCREL"/>
+                    <xs:element type="xs:byte" name="STATUS"/>
+                    <xs:element type="xs:byte" name="DIRECT"/>
+                    <xs:element type="xs:byte" name="OUTMOD"/>
+                    <xs:element type="xs:string" name="IDOCTYP"/>
+                    <xs:element type="xs:string" name="MESTYP"/>
+                    <xs:element type="xs:string" name="SNDPOR"/>
+                    <xs:element type="xs:string" name="SNDPRT"/>
+                    <xs:element type="xs:string" name="SNDPRN"/>
+                    <xs:element type="xs:string" name="RCVPOR"/>
+                    <xs:element type="xs:string" name="RCVPRT"/>
+                    <xs:element type="xs:string" name="RCVPRN"/>
+                    <xs:element type="xs:int" name="CREDAT"/>
+                    <xs:element type="xs:int" name="CRETIM"/>
+                    <xs:element type="xs:long" name="SERIAL"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ZIMP_CARICOH">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="TP_RECORD"/>
+                    <xs:element type="xs:string" name="TP_AZIONE"/>
+                    <xs:element type="xs:string" name="ID_SITO"/>
+                    <xs:element type="xs:string" name="ID_PROPRIETA"/>
+                    <xs:element type="xs:long" name="ID_ORDINE"/>
+                    <xs:element type="xs:string" name="ID_FLUSSO"/>
+                    <xs:element type="xs:int" name="DT_ORDINE"/>
+                    <xs:element type="xs:long" name="ID_RICEVIMENTO"/>
+                    <xs:element type="xs:int" name="DT_DOCUMENTO"/>
+                    <xs:element type="xs:long" name="ID_DOCUMENTO"/>
+                    <xs:element type="xs:string" name="ID_FORNITORE"/>
+                    <xs:element type="xs:string" name="DS_RAG_SOC_ESTESA_FORN"/>
+                    <xs:element name="ZIMP_CARICOL">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="TP_RECORD"/>
+                          <xs:element type="xs:string" name="TP_AZIONE"/>
+                          <xs:element type="xs:string" name="ID_SITO"/>
+                          <xs:element type="xs:string" name="ID_PROPRIETA"/>
+                          <xs:element type="xs:long" name="ID_ORDINE"/>
+                          <xs:element type="xs:int" name="DT_ORDINE"/>
+                          <xs:element type="xs:long" name="ID_RICEVIMENTO"/>
+                          <xs:element type="xs:int" name="DT_DOCUMENTO"/>
+                          <xs:element type="xs:long" name="ID_DOCUMENTO"/>
+                          <xs:element type="xs:string" name="ID_SKU"/>
+                          <xs:element type="xs:byte" name="ID_ORD_RIGA"/>
+                          <xs:element type="xs:float" name="QT_ORDINE"/>
+                          <xs:element type="xs:byte" name="DT_SCADENZA"/>
+                          <xs:element type="xs:byte" name="ID_RIFERIMENTO_HOST"/>
+                          <xs:element type="xs:string" name="ID_RIFERIMENTO_HOST_2"/>
+                          <xs:element type="xs:byte" name="DT_PRODUZIONE"/>
+                          <xs:element name="ZIMP_CARICOL_SN">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:byte" name="TP_RECORD"/>
+                                <xs:element type="xs:string" name="ID_SITO"/>
+                                <xs:element type="xs:string" name="ID_PROPRIETA"/>
+                                <xs:element type="xs:long" name="ID_ORDINE"/>
+                                <xs:element type="xs:byte" name="ID_ORD_RIGA"/>
+                                <xs:element type="xs:int" name="DS_SN"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="EDI_DS40" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="MANDT"/>
+                    <xs:element type="xs:int" name="DOCNUM"/>
+                    <xs:element type="xs:int" name="LOGDAT"/>
+                    <xs:element type="xs:int" name="LOGTIM"/>
+                    <xs:element type="xs:byte" name="STATUS"/>
+                    <xs:element type="xs:string" name="STAMQU" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAMID" minOccurs="0"/>
+                    <xs:element type="xs:byte" name="STAMNO"/>
+                    <xs:element type="xs:string" name="STATYP" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA1" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA2" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA3" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA4" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STATXT" minOccurs="0"/>
+                    <xs:element type="xs:string" name="UNAME"/>
+                    <xs:element type="xs:string" name="REPID" minOccurs="0"/>
+                    <xs:element type="xs:byte" name="SEGNUM"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

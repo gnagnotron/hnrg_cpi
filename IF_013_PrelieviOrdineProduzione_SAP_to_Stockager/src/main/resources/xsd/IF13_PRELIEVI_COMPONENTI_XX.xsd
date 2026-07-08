@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Prelievi">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Ordine" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Ordine">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="tp_azione" />								<!-- FISSO 'I' -->
+                <xs:element ref="id_sito" />								<!-- CODICE SITO -->
+                <xs:element ref="id_proprieta" />							<!-- CODICE PROPRIETA -->
+                <xs:element ref="id_ordine" />								<!-- NM ORDINE -->
+                <xs:element ref="id_flusso" />								<!-- FISSO 'ODP' -->
+                <xs:element ref="dt_ordine" />								<!-- Formato YYYYMMDD -->
+                <xs:element ref="dt_prev_consegna" minOccurs="0" />			<!-- SAP DA VALORIZZARE CON DATA PREVISTA ELABORAZIONE -->
+                <xs:element ref="id_riferimento_host" minOccurs="0" />
+                <xs:element ref="id_riferimento_host_2" minOccurs="0" />
+                <xs:element ref="id_riferimento_host_3" minOccurs="0" />
+                <xs:element ref="id_causale" />								<!-- DA VALORIZZARE UGUALE AL FLUSSO -->
+                <xs:element ref="nm_priorita" />							<!-- IMPOSTABILE DA SAP -->
+				<xs:element ref="id_storage_location_a" minOccurs="0"/>		<!-- storage location di rilascio -->
+                <xs:element ref="id_dest_esterna" minOccurs="0"/>			<!-- SAP Valorizzerà con id_storage_esterna+id_reparto -->
+				<xs:element ref="ds_pattern_area_dest" minOccurs="0" />		<!-- Campo calcolato da stockager-->
+				<xs:element ref="Righe" minOccurs="1"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Righe">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Riga" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Riga">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="tp_azione"/>								<!-- FISSO 'I' -->
+                <xs:element ref="dt_prev_consegna" minOccurs="0" />			<!-- Formato YYYYMMDD -->
+                <xs:element ref="id_riferimento_host" minOccurs="0" />		
+                <xs:element ref="id_riferimento_host_3" minOccurs="0" />	
+                <xs:element ref="id_riferimento_host_2" minOccurs="0" />	
+                <xs:element ref="id_ord_riga"/>								
+                <xs:element ref="id_sku"/>									
+                <xs:element ref="id_classifica" minOccurs="0" />			
+                <xs:element ref="qt_ordine"/>								
+                <xs:element ref="ds_lotto"/>								
+                <xs:element ref="ds_commessa" minOccurs="0" />
+				<xs:element ref="id_special_stock" />						
+				<xs:element ref="id_stock_type"  />							
+				<xs:element ref="id_split_evaluation" />					
+				<xs:element ref="tp_proprieta" />							
+				<xs:element ref="id_storage_location" />					<!-- Storage location presa -->
+                <xs:element ref="Serial_Numbers" minOccurs="0"/>
+			</xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Serial_Numbers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Serial_Number" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Serial_Number">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="ds_sn"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <!-- Testata.-->
+    <xs:element name="tp_azione" default="I">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="1" />
+                <xs:enumeration value="I" />
+                <xs:enumeration value="M" />
+                <xs:enumeration value="A" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_proprieta">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="2" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_sito">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="4" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_ordine">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_flusso">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="6" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="dt_ordine">
+        <xs:simpleType>
+            <xs:restriction base="xs:date">
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="dt_prev_consegna">
+        <xs:simpleType>
+            <xs:restriction base="xs:date">
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_riferimento_host">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="30" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_riferimento_host_2">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="30" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_riferimento_host_3">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="30" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_causale">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="6" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="nm_priorita" type="xs:nonNegativeInteger" default="500"/>
+	<xs:element name="id_dest_esterna">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_storage_location_a">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="4" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="ds_pattern_area_dest">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+				<xs:maxLength value="4" />
+			</xs:restriction>
+		</xs:simpleType>
+    </xs:element>
+    <!-- Righe.-->
+    <xs:element name="id_sku">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="25" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_classifica">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="4" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_ord_riga" type="xs:nonNegativeInteger" />
+    <xs:element name="qt_ordine">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_lotto">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_commessa">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_special_stock">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="2" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_stock_type">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="1" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_split_evaluation">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="10" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="tp_proprieta">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="1" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_storage_location">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1" />
+                <xs:maxLength value="4" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!-- SN.-->
+    <xs:element name="ds_sn">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,5 @@
+#Fri Jan 26 10:56:51 UTC 2024
+environment=TEST
+inbound_process_direct=/STOCKAGER/IF010
+credentials=tst_stockager
+credentials_prod=prd_stockager

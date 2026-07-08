@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Elenco_Ddt">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Ddt" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Ddt">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="tp_azione" />
+                <xs:element ref="id_sito" />
+                <xs:element ref="id_proprieta" />
+                <xs:element ref="id_documento" />
+                <xs:element ref="dt_documento" />
+                <xs:element ref="id_cliente" />
+                <xs:element ref="id_destinazione" />
+                <xs:element ref="vl_contrassegno" minOccurs="0" />
+                <xs:element ref="ds_valuta_contrassegno" minOccurs="0" />
+                <xs:element ref="id_currency" minOccurs="0" />
+                <xs:element ref="id_incoterm" />
+                <xs:element ref="id_tipo_pagamento" />
+                <xs:element ref="id_livello_servizio" minOccurs="0" />
+                <xs:element ref="id_tipo_cod" minOccurs="0" />
+                <xs:element ref="id_consegna_particolare_1" minOccurs="0" />
+                <xs:element ref="id_consegna_particolare_2" minOccurs="0" />			
+                <xs:element ref="dt_appuntamento" minOccurs="0" />
+                <xs:element ref="ds_ora_inizio_appuntamento" minOccurs="0" />
+                <xs:element ref="ds_ora_fine_appuntamento" minOccurs="0" />
+                <xs:element ref="ds_turni_chiusura" minOccurs="0" />
+				<xs:element ref="id_shipment_sap" minOccurs="0" />
+                <xs:element ref="Vettore1" minOccurs="1" />
+                <xs:element ref="Prebolle" minOccurs="1" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Vettore1">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="id_vettore"/>
+                <xs:element ref="ds_rag_soc_estesa" minOccurs="0"/>
+                <xs:element ref="ds_rag_soc_ridotta" minOccurs="0" />
+                <xs:element ref="ds_localita" minOccurs="0" />
+                <xs:element ref="ds_indirizzo" minOccurs="0" />
+                <xs:element ref="ds_zipcode" minOccurs="0" />
+                <xs:element ref="ds_provincia" minOccurs="0" />
+                <xs:element ref="ds_nazione" minOccurs="0" />
+                <xs:element ref="ds_telefono" minOccurs="0" />
+                <xs:element ref="ds_fax" minOccurs="0" />
+                <xs:element ref="ds_email" minOccurs="0" />
+                <xs:element ref="ds_partita_iva" minOccurs="0" />
+                <xs:element ref="ds_cod_fiscale" minOccurs="0" />
+                <xs:element ref="ds_cod_reg_albo" minOccurs="0"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Prebolle">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Prebolla" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Prebolla">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="tp_azione"/>
+                <xs:element ref="id_prebolla" />
+                <xs:element ref="dt_prebolla" />
+                <xs:element ref="id_ordine" />
+                <xs:element ref="id_cliente" />
+                <xs:element ref="id_destinazione" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <!-- Ddt -->
+    <xs:element name="tp_azione" default="I">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="1" />
+                <xs:enumeration value="I" />
+                <xs:enumeration value="M" />
+                <xs:enumeration value="A" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_proprieta">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="2" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_sito">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="4" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="vl_contrassegno" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_valuta_contrassegno" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_documento">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                    <xs:minLength value="1" />
+                <xs:maxLength value="15" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="dt_documento">
+        <xs:simpleType>
+            <xs:restriction base="xs:date">
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_currency" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>	
+    <xs:element name="id_incoterm" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>		
+    <xs:element name="id_tipo_pagamento" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="10" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_livello_servizio" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>	
+    <xs:element name="id_tipo_cod" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>	
+    <xs:element name="id_consegna_particolare_1" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="50" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>		
+    <xs:element name="id_consegna_particolare_2" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="50" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>		
+    <xs:element name="dt_appuntamento">
+        <xs:simpleType>
+            <xs:restriction base="xs:date">
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>	
+    <xs:element name="ds_ora_inizio_appuntamento" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>		
+    <xs:element name="ds_ora_fine_appuntamento" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>	
+    <xs:element name="ds_turni_chiusura" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="7" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_shipment_sap" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>	
+    <!-- Prebolla -->
+    <xs:element name="id_prebolla">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                    <xs:minLength value="1" />
+                <xs:maxLength value="15" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="dt_prebolla">
+        <xs:simpleType>
+            <xs:restriction base="xs:date">
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_ordine">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!-- Cli/For/Vet.-->
+    <xs:element name="id_cliente">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_destinazione">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_vettore">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_rag_soc_estesa">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="50" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_rag_soc_ridotta">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="15" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_localita">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="50" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_indirizzo">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="80" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_zipcode">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="10" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_provincia">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="10" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_nazione">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_telefono">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="15" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_fax">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="15" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_email">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_partita_iva">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:length value="11" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_cod_fiscale">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:length value="16" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_cod_reg_albo">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:length value="10" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+</xs:schema>

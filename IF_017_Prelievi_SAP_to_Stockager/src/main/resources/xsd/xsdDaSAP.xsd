@@ -1,0 +1,119 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Prelievi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Ordine">
+          <xs:annotation>
+            <xs:documentation>uno o più elementi</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="id_sito">
+                <xs:annotation>
+                  <xs:documentation>Fisso TBP1</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element type="xs:string" name="id_proprieta">
+                <xs:annotation>
+                  <xs:documentation>Fisso P1</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element type="xs:long" name="id_ordine">
+                <xs:annotation>
+                  <xs:documentation>Codice ordine</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element type="xs:string" name="id_cliente"/>
+              <xs:element type="xs:string" name="id_destinazione"/>
+              <xs:element type="xs:date" name="dt_ordine">
+                <xs:annotation>
+                  <xs:documentation>Formato YYYY-MM-DD</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element type="xs:string" name="id_flusso">
+                <xs:annotation>
+                  <xs:documentation>Flussi gestiti
+			Codice	Descrizione
+			PCR		Centri di riparazione
+			PRM		Clienti RMA
+			PRP1	Spedizione
+			PRR		Clienti R&amp;R
+			PSP		Spare parts
+			T		Trasferimento</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element type="xs:string" name="id_causale">
+                <xs:annotation>
+                  <xs:documentation>Causali gestite
+			Codice	Descrizione
+			PCR		Centri di riparazione
+			PRM		Clienti RMA
+			PRP1	Spedizione
+			PRR		Clienti R&amp;R
+			PSP		Spare parts
+			T		Trasferimento</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Elenco_Uds">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Uds">
+                      <xs:annotation>
+                        <xs:documentation>uno o più elementi</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:long" name="id_uds">
+                            <xs:annotation>
+                              <xs:documentation>Codice UDS</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="Righe">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Riga" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:annotation>
+                                    <xs:documentation>uno o più elementi</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:byte" name="id_ord_riga"/>
+                                      <xs:element type="xs:string" name="id_sku">
+                                        <xs:annotation>
+                                          <xs:documentation>Codice prodotto</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element type="xs:float" name="qt_movimento"/>
+                                      <xs:element type="xs:string" name="ds_lotto" minOccurs="0"/>
+                                      <xs:element type="xs:string" name="id_classifica">
+                                        <xs:annotation>
+                                          <xs:documentation>Fisso V</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element type="xs:string" name="tp_movimento">
+                                        <xs:annotation>
+                                          <xs:documentation>Vale E/I: E per Evaso, I per Inevaso</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element type="xs:short" name="id_riferimento_host_riga"/>
+                                      <xs:element type="xs:string" name="id_riferimento_host_riga_2"/>
+                                      <xs:element type="xs:float" name="qt_ordine"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,177 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DESADV01">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="IDOC">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EDI_DC40">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="TABNAM"/>
+                    <xs:element type="xs:byte" name="MANDT"/>
+                    <xs:element type="xs:int" name="DOCNUM"/>
+                    <xs:element type="xs:short" name="DOCREL"/>
+                    <xs:element type="xs:byte" name="STATUS"/>
+                    <xs:element type="xs:byte" name="DIRECT"/>
+                    <xs:element type="xs:byte" name="OUTMOD"/>
+                    <xs:element type="xs:string" name="IDOCTYP"/>
+                    <xs:element type="xs:string" name="MESTYP"/>
+                    <xs:element type="xs:string" name="SNDPOR"/>
+                    <xs:element type="xs:string" name="SNDPRT"/>
+                    <xs:element type="xs:string" name="SNDPRN"/>
+                    <xs:element type="xs:string" name="RCVPOR"/>
+                    <xs:element type="xs:string" name="RCVPRT"/>
+                    <xs:element type="xs:string" name="RCVPFC"/>
+                    <xs:element type="xs:string" name="RCVPRN"/>
+                    <xs:element type="xs:int" name="CREDAT"/>
+                    <xs:element type="xs:int" name="CRETIM"/>
+                    <xs:element type="xs:long" name="SERIAL"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="E1EDK07">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="ACTION"/>
+                    <xs:element type="xs:long" name="VBELN"/>
+                    <xs:element type="xs:byte" name="ROUTE"/>
+                    <xs:element type="xs:string" name="ROUTE_BEZ"/>
+                    <xs:element type="xs:string" name="VSBED"/>
+                    <xs:element type="xs:string" name="VSTEL"/>
+                    <xs:element type="xs:string" name="VSTEL_BEZ"/>
+                    <xs:element type="xs:string" name="VKORG"/>
+                    <xs:element type="xs:short" name="ZOLL4"/>
+                    <xs:element type="xs:string" name="ZOLL5"/>
+                    <xs:element type="xs:string" name="ZOLL6"/>
+                    <xs:element type="xs:string" name="RECIPNT_NO"/>
+                    <xs:element type="xs:string" name="E1EDKA1"/>
+                    <xs:element type="xs:string" name="E1EDK03"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="E1EDK08">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="ACTION"/>
+                    <xs:element type="xs:long" name="VBELN"/>
+                    <xs:element type="xs:byte" name="ROUTE"/>
+                    <xs:element type="xs:string" name="ROUTE_BEZ"/>
+                    <xs:element type="xs:string" name="VSBED"/>
+                    <xs:element type="xs:string" name="VSTEL"/>
+                    <xs:element type="xs:string" name="VSTEL_BEZ"/>
+                    <xs:element type="xs:string" name="VKORG"/>
+                    <xs:element type="xs:byte" name="VTWEG"/>
+                    <xs:element name="E1EDS01" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="SUMID"/>
+                          <xs:element type="xs:float" name="SUMME"/>
+                          <xs:element type="xs:string" name="SUNIT" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="E1EDKA2">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="PARVW"/>
+                          <xs:element type="xs:string" name="PARTN"/>
+                          <xs:element type="xs:string" name="NAME1"/>
+                          <xs:element type="xs:string" name="STRAS"/>
+                          <xs:element type="xs:string" name="ORT01"/>
+                          <xs:element type="xs:int" name="PSTLZ"/>
+                          <xs:element type="xs:string" name="LAND1"/>
+                          <xs:element type="xs:string" name="ABLAD"/>
+                          <xs:element type="xs:string" name="SPRAS"/>
+                          <xs:element type="xs:byte" name="HAUSN"/>
+                          <xs:element type="xs:string" name="REGIO"/>
+                          <xs:element type="xs:string" name="KNREF"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="E1EDK06" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="IDDAT"/>
+                          <xs:element type="xs:int" name="DATUM"/>
+                          <xs:element type="xs:byte" name="UHRZE" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="E1EDP07">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:long" name="BSTNK"/>
+                          <xs:element type="xs:byte" name="POSEX"/>
+                          <xs:element type="xs:long" name="VBELN"/>
+                          <xs:element type="xs:long" name="VGBEL"/>
+                          <xs:element type="xs:byte" name="VGPOS"/>
+                          <xs:element type="xs:string" name="VGTYP"/>
+                          <xs:element type="xs:byte" name="ABRDT"/>
+                          <xs:element name="E1EDP09">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:byte" name="PARENT"/>
+                                <xs:element type="xs:long" name="VBELN"/>
+                                <xs:element type="xs:byte" name="POSNR"/>
+                                <xs:element type="xs:string" name="MATNR"/>
+                                <xs:element type="xs:string" name="WERKS"/>
+                                <xs:element type="xs:string" name="LGORT"/>
+                                <xs:element type="xs:float" name="LFIMG"/>
+                                <xs:element type="xs:string" name="VRKME"/>
+                                <xs:element type="xs:float" name="BTGEW"/>
+                                <xs:element type="xs:float" name="NTGEW"/>
+                                <xs:element type="xs:string" name="GEWEI"/>
+                                <xs:element type="xs:float" name="VOLUM"/>
+                                <xs:element type="xs:string" name="ARKTX"/>
+                                <xs:element type="xs:float" name="TXTZ1"/>
+                                <xs:element type="xs:string" name="TXTZ2"/>
+                                <xs:element type="xs:int" name="ECHDT"/>
+                                <xs:element type="xs:byte" name="ABRDT"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="E1EDS02">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="SUMID"/>
+                    <xs:element type="xs:byte" name="SUMME"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="EDI_DS40" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="MANDT"/>
+                    <xs:element type="xs:int" name="DOCNUM"/>
+                    <xs:element type="xs:int" name="LOGDAT"/>
+                    <xs:element type="xs:int" name="LOGTIM"/>
+                    <xs:element type="xs:byte" name="STATUS"/>
+                    <xs:element type="xs:string" name="STAMQU" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAMID" minOccurs="0"/>
+                    <xs:element type="xs:byte" name="STAMNO"/>
+                    <xs:element type="xs:string" name="STATYP" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA1" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA2" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA3" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA4" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STATXT" minOccurs="0"/>
+                    <xs:element type="xs:string" name="UNAME"/>
+                    <xs:element type="xs:string" name="REPID" minOccurs="0"/>
+                    <xs:element type="xs:byte" name="SEGNUM"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,5 @@
+#
+#Wed Jul 08 14:39:09 UTC 2026
+SFTP_host=stockager-prod\:222
+SFTP_user=SFTP_Stockager_Prod
+scc_locationid=PS4

@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Items">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Sku" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Sku">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="tp_azione" />                              <!-- GIà MAPPATO, VALORE CONCORDATO FISSO 'M' -->
+                <xs:element ref="id_proprieta" />                           <!-- GIà MAPPATO, VALORE CONCORDATO MP FISSO 'P1', SB FISSO 'P2' -->
+                <xs:element ref="id_sku" />                                 <!-- GIà GESTITO -->
+                <xs:element ref="ds_sku" />                                 <!-- GIà GESTITO -->
+                <xs:element ref="nm_gg_scadenza" minOccurs="0"/>            <!-- GIà GESTITO SAP = Durata minima residua-->
+                <xs:element ref="vl_valore" minOccurs="0"/>
+                <xs:element ref="ds_valuta" minOccurs="0"/>
+                <xs:element ref="ds_unita_misura" minOccurs="0"/>           <!-- GIà GESTITO SAP = UoM-->
+                <xs:element ref="tp_gest_lotto" minOccurs="0"/>             <!-- GIà GESTITO, AD OGGI GESTITI N -> Nessuna, E -> FEFO, F -> FIFO SAP = Putaway strategy-->
+                <xs:element ref="dt_limite_accettazione" minOccurs="0"/>
+                <xs:element ref="id_fornitore" minOccurs="0"/>
+                <xs:element ref="ds_sku_aggiuntiva" minOccurs="0"/>
+                <xs:element ref="tp_gest_sn" minOccurs="0"/>                <!-- GIà GESTITO GESTIONE A SERIAL NUMBER, SE S È OBBLIGATORIA LA GESTIONE IN STOCKAGER  SAP = Serial Number management-->
+                <xs:element ref="tp_rilev_lotto" minOccurs="0"/>            <!-- GIà GESTITO, VALORI AMMESSI S/N (GESTIONE PARTITA S/N) SAP = Batch management-->
+                <xs:element ref="tp_rilev_dt_prod" minOccurs="0"/>
+                <xs:element ref="tp_rilev_dt_scad" minOccurs="0"/>
+                <xs:element ref="tp_rilev_commessa" minOccurs="0"/>
+                <xs:element ref="tp_car_ord_lotto" minOccurs="0"/>
+                <xs:element ref="tp_car_ord_dt_prod" minOccurs="0"/>
+                <xs:element ref="tp_car_ord_dt_scad" minOccurs="0"/>
+                <xs:element ref="tp_car_ord_commessa" minOccurs="0"/>
+                <xs:element ref="tp_prel_ord_lotto" minOccurs="0"/>
+                <xs:element ref="tp_prel_ord_commessa" minOccurs="0"/>
+                <xs:element ref="tp_prel_ord_sn" minOccurs="0"/>
+                <xs:element ref="tp_materiale" minOccurs="0"/>              <!-- NUOVO, DA CONCORDARE DIMENSIONI E VALORI Materia prima, semilavorato, prodotto finito-->
+                <xs:element ref="ds_tp_materiale" minOccurs="0"/>           <!-- NUOVO, DA CONCORDARE DIMENSIONI E VALORI Materia prima, semilavorato, prodotto finito-->
+                <!-- <xs:element ref="id_material_code" minOccurs="0"/>     NUOVO, DA CONCORDARE DIMENSIONI E VALORI  -->
+                <!-- <xs:element ref="ds_material_code" minOccurs="0"/>     NUOVO, DA CONCORDARE DIMENSIONI E VALORI  -->
+                <xs:element ref="id_abc_class" minOccurs="0"/>              <!-- NUOVO, DA CONCORDARE DIMENSIONI E VALORI -->
+                <xs:element ref="id_global_product" minOccurs="0"/>         <!-- NUOVO, DA CONCORDARE DIMENSIONI E VALORI -->
+                <xs:element ref="Barcodes" minOccurs="0"/>
+                <xs:element ref="Minimi_Strati" minOccurs="0"/>
+                <xs:element ref="Metaclassi" minOccurs="0"/>
+                <xs:element ref="Fashion" minOccurs="0" maxOccurs="1" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Barcodes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Barcode" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Barcode">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="tp_azione" />
+                <xs:element ref="id_barcode" />
+                <xs:element ref="tp_barcode" minOccurs="0"/>
+                <xs:element ref="qt_spunta" minOccurs="0"/>
+                <xs:element ref="nm_sequenza" minOccurs="0"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Minimi_Strati">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Minimo_Strato" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Minimo_Strato">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="tp_azione" />
+                <xs:element ref="id_schema" minOccurs="0" />
+                <xs:element ref="nm_strato" />
+                <xs:element ref="id_minimo" minOccurs="0" />
+                <xs:element ref="ds_minimo" minOccurs="0" />
+                <xs:element ref="ms_lunghezza" />
+                <xs:element ref="ms_larghezza" />
+                <xs:element ref="ms_altezza" />
+                <xs:element ref="ms_peso" />
+                <xs:element ref="qt_contenuto" />
+                <xs:element ref="fl_vendibile" minOccurs="0" />
+                <xs:element ref="fl_uds" minOccurs="0" />
+                <xs:element ref="Imballo" minOccurs="0" maxOccurs="1" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Imballo">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="id_imballo" />
+                <xs:element ref="ds_imballo" minOccurs="0" />
+                <xs:element ref="ms_lunghezza" />
+                <xs:element ref="ms_larghezza" />
+                <xs:element ref="ms_altezza" />
+                <xs:element ref="ms_peso" />
+                <xs:element ref="ms_tara" />
+                <xs:element ref="tp_imballo" minOccurs="0" />
+                <xs:element ref="tp_ritorno" minOccurs="0" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Metaclassi">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Metaclasse" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Metaclasse">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="id_meta" />
+                <xs:element ref="ds_meta" />
+                <xs:element ref="id_classe" />
+                <xs:element ref="ds_classe" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Fashion">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="id_f_anno_collection" minOccurs="0" />
+                <xs:element ref="id_f_collection" minOccurs="0" />
+                <xs:element ref="id_f_anno_stagione" minOccurs="0" />
+                <xs:element ref="id_f_stagione" minOccurs="0" />
+                <xs:element ref="ds_f_stagione" minOccurs="0" />
+                <xs:element ref="id_f_articolo" minOccurs="0" />
+                <xs:element ref="ds_f_articolo" minOccurs="0" />
+                <xs:element ref="id_f_colore" minOccurs="0" />
+                <xs:element ref="ds_f_colore" minOccurs="0" />
+                <xs:element ref="id_f_taglia" minOccurs="0" />
+                <xs:element ref="ds_f_taglia" minOccurs="0" />
+                <xs:element ref="id_f_genere" minOccurs="0" />
+                <xs:element ref="ds_f_genere" minOccurs="0" />
+                <xs:element ref="id_f_brand" minOccurs="0" />
+                <xs:element ref="ds_f_brand" minOccurs="0" />
+                <xs:element ref="id_f_linea" minOccurs="0" />
+                <xs:element ref="ds_f_linea" minOccurs="0" />
+                <xs:element ref="ds_f_composizione" minOccurs="0" />
+                <xs:element ref="ds_f_made_in" minOccurs="0" />
+                <xs:element ref="vl_prezzo_acquisto" minOccurs="0" />
+                <xs:element ref="ds_valuta_acquisto" minOccurs="0" />
+                <xs:element ref="vl_prezzo_outlet" minOccurs="0" />
+                <xs:element ref="ds_valuta_outlet" minOccurs="0" />
+                <xs:element ref="vl_prezzo_wholesale" minOccurs="0" />
+                <xs:element ref="ds_valuta_wholesale" minOccurs="0" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="tp_azione" default="I" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="I" />
+                <xs:enumeration value="M" />
+                <xs:enumeration value="A" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_proprieta" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="2" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_sku" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="25" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_sku" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="50" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="nm_gg_scadenza" >
+        <xs:simpleType>
+            <xs:restriction base="xs:nonNegativeInteger">
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="vl_valore" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_valuta" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_unita_misura" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_gest_lotto" default="N">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="F" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="E" />
+                <xs:enumeration value="N" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_gest_sn">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="N" />
+                <xs:enumeration value="P" />
+                <xs:enumeration value="S" />
+                <xs:enumeration value="U" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_rilev_lotto">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="N" />
+                <xs:enumeration value="S" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_rilev_dt_prod">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="S" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_rilev_dt_scad">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="S" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_rilev_commessa">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="N" />
+                <xs:enumeration value="S" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_car_ord_lotto">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="N" />
+                <xs:enumeration value="S" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_car_ord_dt_prod">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="N" />
+                <xs:enumeration value="S" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_car_ord_dt_scad">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="N" />
+                <xs:enumeration value="S" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_car_ord_commessa">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="N" />
+                <xs:enumeration value="S" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_prel_ord_lotto">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="N" />
+                <xs:enumeration value="S" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_prel_ord_commessa">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="N" />
+                <xs:enumeration value="S" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_prel_ord_sn">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="L" />
+                <xs:enumeration value="N" />
+                <xs:enumeration value="S" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="dt_limite_accettazione" >
+        <xs:simpleType>
+            <xs:restriction base="xs:date">
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_fornitore" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="20" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_sku_aggiuntiva" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_barcode" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1" />
+                <xs:maxLength value="30" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_barcode"  default="C39">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="6" />
+                <xs:enumeration value="C39" />
+                <xs:enumeration value="I25" />
+                <xs:enumeration value="C128" />
+                <xs:enumeration value="EAN128" />
+                <xs:enumeration value="EAN13" />
+                <xs:enumeration value="PDF417" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="qt_spunta" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	 <xs:element name = "nm_sequenza">
+		<xs:simpleType>
+		   <xs:restriction base = "xs:nonNegativeInteger">
+			   <xs:maxInclusive value = "99"/>
+			   <xs:minInclusive value = "1"/>
+		   </xs:restriction>
+		</xs:simpleType>
+	 </xs:element>
+    <xs:element name="id_schema"  default="STD">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	 <xs:element name = "nm_strato">
+		<xs:simpleType>
+		   <xs:restriction base = "xs:nonNegativeInteger">
+			   <xs:maxInclusive value = "1"/>
+		   </xs:restriction>
+		</xs:simpleType>
+	 </xs:element>
+    <xs:element name="id_minimo" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_minimo"  default="STD">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ms_lunghezza" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ms_larghezza" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ms_altezza" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ms_peso" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="qt_contenuto" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="fl_vendibile" default="S" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="S" />
+                <xs:enumeration value="N" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="fl_uds" default="N" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="1" />
+                <xs:enumeration value="S" />
+                <xs:enumeration value="N" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_imballo"  default="PEUR">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_imballo"  default="PEUR">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="40" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ms_tara" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_imballo" default="T">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="1" />
+                <xs:enumeration value="S" />
+                <xs:enumeration value="B" />
+                <xs:enumeration value="X" />
+                <xs:enumeration value="T" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="tp_ritorno" default="X">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="1" />
+                <xs:enumeration value="P" />
+                <xs:enumeration value="R" />
+                <xs:enumeration value="X" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_meta" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_meta" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="50" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_classe" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="5" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_classe" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="50" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!-- Fashion -->
+    <xs:element name="id_f_anno_collection" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="4"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_f_collection" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="10"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_f_anno_stagione" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="4"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_f_stagione" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="10"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_f_stagione" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="30"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_f_articolo" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="25"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_f_articolo" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="30"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_f_colore" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="10"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_f_colore" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="30"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_f_taglia" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="10"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_f_taglia" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="30"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_f_genere" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="10"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_f_genere" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="30"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_f_brand" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="10"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_f_brand" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="30"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="id_f_linea" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="10"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_f_linea" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="30"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_f_composizione" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="100"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_f_made_in" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="50"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="vl_prezzo_acquisto" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_valuta_acquisto" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="3"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="vl_prezzo_outlet" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_valuta_outlet" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="3"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="vl_prezzo_wholesale" >
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:fractionDigits value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="ds_valuta_wholesale" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="3"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="tp_materiale" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="4"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="ds_tp_materiale" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="25"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_abc_class" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+	<xs:element name="id_global_product" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="40"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+</xs:schema>

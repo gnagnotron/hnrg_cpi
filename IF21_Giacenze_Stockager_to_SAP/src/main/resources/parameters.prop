@@ -1,0 +1,19 @@
+#
+#Wed Jul 08 14:38:56 UTC 2026
+IDOCTYP=ZQLEAI_GM_STOCKAGER_IF21
+MESTYP=ZQLEAI_GM_STOCKAGER_IF21
+RCVPOR=SAPPS4
+RCVPRN=PS4CLNT100
+RCVPRT=LS
+S4Credentials=DS4_110
+S4Host=vhab2ds4ci.sap.e-mobility.abb.com\:44300
+S4Mandt=110
+SCC_LocationID=DS4
+SNDPOR=SCPI
+SNDPRN=STOCKAGER
+SNDPRT=LS
+execute?=true
+scc_locationid=PS4
+sftp_host=stockager-prod\:222
+sftp_user=SFTP_Stockager_Prod
+test_body=constant

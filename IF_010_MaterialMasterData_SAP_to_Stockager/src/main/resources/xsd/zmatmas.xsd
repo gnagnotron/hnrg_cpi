@@ -1,0 +1,383 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MATMAS05">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="IDOC">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EDI_DC40">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="TABNAM"/>
+                    <xs:element type="xs:byte" name="MANDT"/>
+                    <xs:element type="xs:int" name="DOCNUM"/>
+                    <xs:element type="xs:short" name="DOCREL"/>
+                    <xs:element type="xs:byte" name="STATUS"/>
+                    <xs:element type="xs:byte" name="DIRECT"/>
+                    <xs:element type="xs:byte" name="OUTMOD"/>
+                    <xs:element type="xs:string" name="IDOCTYP"/>
+                    <xs:element type="xs:string" name="MESTYP"/>
+                    <xs:element type="xs:string" name="SNDPOR"/>
+                    <xs:element type="xs:string" name="SNDPRT"/>
+                    <xs:element type="xs:string" name="SNDPRN"/>
+                    <xs:element type="xs:string" name="RCVPOR"/>
+                    <xs:element type="xs:string" name="RCVPRT"/>
+                    <xs:element type="xs:string" name="RCVPRN"/>
+                    <xs:element type="xs:int" name="CREDAT"/>
+                    <xs:element type="xs:int" name="CRETIM"/>
+                    <xs:element type="xs:long" name="SERIAL"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="E1MARAM">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="MSGFN"/>
+                    <xs:element type="xs:string" name="MATNR"/>
+                    <xs:element type="xs:string" name="ERSDA"/>
+                    <xs:element type="xs:string" name="ERNAM"/>
+                    <xs:element type="xs:string" name="LAEDA"/>
+                    <xs:element type="xs:string" name="AENAM"/>
+                    <xs:element type="xs:string" name="PSTAT"/>
+                    <xs:element type="xs:string" name="MTART"/>
+                    <xs:element type="xs:string" name="MBRSH"/>
+                    <xs:element type="xs:string" name="MATKL"/>
+                    <xs:element type="xs:string" name="BISMT"/>
+                    <xs:element type="xs:string" name="MEINS"/>
+                    <xs:element type="xs:string" name="BSTME"/>
+                    <xs:element type="xs:string" name="ZEINR"/>
+                    <xs:element type="xs:string" name="ZEIAR"/>
+                    <xs:element type="xs:string" name="ZEIVR"/>
+                    <xs:element type="xs:string" name="ZEIFO"/>
+                    <xs:element type="xs:string" name="AESZN"/>
+                    <xs:element type="xs:string" name="BLATT"/>
+                    <xs:element type="xs:string" name="BLANZ"/>
+                    <xs:element type="xs:string" name="FERTH"/>
+                    <xs:element type="xs:string" name="FORMT"/>
+                    <xs:element type="xs:string" name="NORMT"/>
+                    <xs:element type="xs:string" name="LABOR"/>
+                    <xs:element type="xs:string" name="EKWSL"/>
+                    <xs:element type="xs:string" name="BRGEW"/>
+                    <xs:element type="xs:string" name="NTGEW"/>
+                    <xs:element type="xs:string" name="GEWEI"/>
+                    <xs:element type="xs:string" name="VOLUM"/>
+                    <xs:element type="xs:string" name="VOLEH"/>
+                    <xs:element type="xs:string" name="BEHVO"/>
+                    <xs:element type="xs:string" name="RAUBE"/>
+                    <xs:element type="xs:string" name="TEMPB"/>
+                    <xs:element type="xs:string" name="TRAGR"/>
+                    <xs:element type="xs:string" name="STOFF"/>
+                    <xs:element type="xs:string" name="SPART"/>
+                    <xs:element type="xs:string" name="KUNNR"/>
+                    <xs:element type="xs:string" name="WESCH"/>
+                    <xs:element type="xs:string" name="BWVOR"/>
+                    <xs:element type="xs:string" name="BWSCL"/>
+                    <xs:element type="xs:string" name="SAISO"/>
+                    <xs:element type="xs:string" name="ETIAR"/>
+                    <xs:element type="xs:string" name="ETIFO"/>
+                    <xs:element type="xs:string" name="EAN11"/>
+                    <xs:element type="xs:string" name="NUMTP"/>
+                    <xs:element type="xs:string" name="LAENG"/>
+                    <xs:element type="xs:string" name="BREIT"/>
+                    <xs:element type="xs:string" name="HOEHE"/>
+                    <xs:element type="xs:string" name="MEABM"/>
+                    <xs:element type="xs:string" name="PRDHA"/>
+                    <xs:element type="xs:string" name="CADKZ"/>
+                    <xs:element type="xs:string" name="ERGEW"/>
+                    <xs:element type="xs:string" name="ERGEI"/>
+                    <xs:element type="xs:string" name="ERVOL"/>
+                    <xs:element type="xs:string" name="ERVOE"/>
+                    <xs:element type="xs:string" name="GEWTO"/>
+                    <xs:element type="xs:string" name="VOLTO"/>
+                    <xs:element type="xs:string" name="VABME"/>
+                    <xs:element type="xs:string" name="KZKFG"/>
+                    <xs:element type="xs:string" name="XCHPF"/>
+                    <xs:element type="xs:string" name="VHART"/>
+                    <xs:element type="xs:string" name="FUELG"/>
+                    <xs:element type="xs:string" name="STFAK"/>
+                    <xs:element type="xs:string" name="MAGRV"/>
+                    <xs:element type="xs:string" name="BEGRU"/>
+                    <xs:element type="xs:string" name="QMPUR"/>
+                    <xs:element type="xs:string" name="RBNRM"/>
+                    <xs:element type="xs:string" name="MHDRZ"/>
+                    <xs:element type="xs:short" name="MHDHB"/>
+                    <xs:element type="xs:string" name="MHDLP"/>
+                    <xs:element type="xs:string" name="VPSTA"/>
+                    <xs:element type="xs:string" name="EXTWG"/>
+                    <xs:element type="xs:string" name="MSTAE"/>
+                    <xs:element type="xs:string" name="MSTAV"/>
+                    <xs:element type="xs:string" name="MSTDE"/>
+                    <xs:element type="xs:string" name="MSTDV"/>
+                    <xs:element type="xs:string" name="KZUMW"/>
+                    <xs:element type="xs:string" name="KOSCH"/>
+                    <xs:element type="xs:string" name="NRFHG"/>
+                    <xs:element type="xs:string" name="MFRPN"/>
+                    <xs:element type="xs:string" name="MFRNR"/>
+                    <xs:element type="xs:string" name="BMATN"/>
+                    <xs:element type="xs:string" name="MPROF"/>
+                    <xs:element type="xs:string" name="PROFL"/>
+                    <xs:element type="xs:string" name="IHIVI"/>
+                    <xs:element type="xs:string" name="ILOOS"/>
+                    <xs:element type="xs:string" name="KZGVH"/>
+                    <xs:element type="xs:string" name="XGCHP"/>
+                    <xs:element type="xs:string" name="COMPL"/>
+                    <xs:element type="xs:string" name="KZEFF"/>
+                    <xs:element type="xs:string" name="RDMHD"/>
+                    <xs:element type="xs:string" name="IPRKZ"/>
+                    <xs:element type="xs:string" name="PRZUS"/>
+                    <xs:element type="xs:string" name="MTPOS_MARA"/>
+                    <xs:element type="xs:float" name="GEWTO_NEW"/>
+                    <xs:element type="xs:float" name="VOLTO_NEW"/>
+                    <xs:element type="xs:string" name="AENNR"/>
+                    <xs:element type="xs:string" name="MATFI"/>
+                    <xs:element type="xs:string" name="CMREL"/>
+                    <xs:element type="xs:string" name="SATNR"/>
+                    <xs:element type="xs:string" name="SLED_BBD"/>
+                    <xs:element type="xs:string" name="GTIN_VARIANT"/>
+                    <xs:element type="xs:string" name="GENNR"/>
+                    <xs:element type="xs:string" name="SERLV"/>
+                    <xs:element type="xs:string" name="RMATP"/>
+                    <xs:element type="xs:string" name="GDS_RELEVANT"/>
+                    <xs:element type="xs:string" name="MCOND"/>
+                    <xs:element type="xs:string" name="RETDELC"/>
+                    <xs:element type="xs:string" name="LOGLEV_RETO"/>
+                    <xs:element type="xs:string" name="NSNID"/>
+                    <xs:element type="xs:string" name="WEORA"/>
+                    <xs:element type="xs:string" name="_-CWM_-TOLGR"/>
+                    <xs:element type="xs:string" name="_-CWM_-TARA"/>
+                    <xs:element type="xs:string" name="_-CWM_-TARUM"/>
+                    <xs:element type="xs:string" name="PACKCODE"/>
+                    <xs:element type="xs:string" name="DG_PACK_STATUS"/>
+                    <xs:element type="xs:string" name="ANP"/>
+                    <xs:element name="E1MAKTM" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="MSGFN"/>
+                          <xs:element type="xs:string" name="SPRAS"/>
+                          <xs:element type="xs:string" name="MAKTX"/>
+                          <xs:element type="xs:string" name="SPRAS_ISO"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="E1MARCM">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="MSGFN"/>
+                          <xs:element type="xs:string" name="WERKS"/>
+                          <xs:element type="xs:string" name="PSTAT"/>
+                          <xs:element type="xs:string" name="LVORM"/>
+                          <xs:element type="xs:string" name="BWTTY"/>
+                          <xs:element type="xs:string" name="MAABC"/>
+                          <xs:element type="xs:string" name="KZKRI"/>
+                          <xs:element type="xs:string" name="EKGRP"/>
+                          <xs:element type="xs:string" name="AUSME"/>
+                          <xs:element type="xs:string" name="DISPR"/>
+                          <xs:element type="xs:string" name="DISMM"/>
+                          <xs:element type="xs:string" name="DISPO"/>
+                          <xs:element type="xs:string" name="PLIFZ"/>
+                          <xs:element type="xs:string" name="WEBAZ"/>
+                          <xs:element type="xs:string" name="PERKZ"/>
+                          <xs:element type="xs:string" name="AUSSS"/>
+                          <xs:element type="xs:string" name="DISLS"/>
+                          <xs:element type="xs:string" name="BESKZ"/>
+                          <xs:element type="xs:string" name="SOBSL"/>
+                          <xs:element type="xs:string" name="MINBE"/>
+                          <xs:element type="xs:string" name="EISBE"/>
+                          <xs:element type="xs:string" name="BSTMI"/>
+                          <xs:element type="xs:string" name="BSTMA"/>
+                          <xs:element type="xs:string" name="BSTFE"/>
+                          <xs:element type="xs:string" name="BSTRF"/>
+                          <xs:element type="xs:string" name="MABST"/>
+                          <xs:element type="xs:string" name="LOSFX"/>
+                          <xs:element type="xs:string" name="SBDKZ"/>
+                          <xs:element type="xs:string" name="LAGPR"/>
+                          <xs:element type="xs:string" name="ALTSL"/>
+                          <xs:element type="xs:string" name="KZAUS"/>
+                          <xs:element type="xs:string" name="AUSDT"/>
+                          <xs:element type="xs:string" name="NFMAT"/>
+                          <xs:element type="xs:string" name="KZBED"/>
+                          <xs:element type="xs:string" name="MISKZ"/>
+                          <xs:element type="xs:string" name="FHORI"/>
+                          <xs:element type="xs:string" name="PFREI"/>
+                          <xs:element type="xs:string" name="FFREI"/>
+                          <xs:element type="xs:string" name="RGEKZ"/>
+                          <xs:element type="xs:string" name="FEVOR"/>
+                          <xs:element type="xs:string" name="BEARZ"/>
+                          <xs:element type="xs:string" name="RUEZT"/>
+                          <xs:element type="xs:string" name="TRANZ"/>
+                          <xs:element type="xs:string" name="BASMG"/>
+                          <xs:element type="xs:string" name="DZEIT"/>
+                          <xs:element type="xs:string" name="MAXLZ"/>
+                          <xs:element type="xs:string" name="LZEIH"/>
+                          <xs:element type="xs:string" name="KZPRO"/>
+                          <xs:element type="xs:string" name="GPMKZ"/>
+                          <xs:element type="xs:string" name="UEETO"/>
+                          <xs:element type="xs:string" name="UEETK"/>
+                          <xs:element type="xs:string" name="UNETO"/>
+                          <xs:element type="xs:string" name="WZEIT"/>
+                          <xs:element type="xs:string" name="ATPKZ"/>
+                          <xs:element type="xs:string" name="VZUSL"/>
+                          <xs:element type="xs:string" name="HERBL"/>
+                          <xs:element type="xs:string" name="INSMK"/>
+                          <xs:element type="xs:string" name="SSQSS"/>
+                          <xs:element type="xs:string" name="KZDKZ"/>
+                          <xs:element type="xs:string" name="UMLMC"/>
+                          <xs:element type="xs:string" name="LADGR"/>
+                          <xs:element type="xs:string" name="USEQU"/>
+                          <xs:element type="xs:string" name="LGRAD"/>
+                          <xs:element type="xs:string" name="AUFTL"/>
+                          <xs:element type="xs:string" name="PLVAR"/>
+                          <xs:element type="xs:string" name="OTYPE"/>
+                          <xs:element type="xs:string" name="OBJID"/>
+                          <xs:element type="xs:string" name="MTVFP"/>
+                          <xs:element type="xs:string" name="PERIV"/>
+                          <xs:element type="xs:string" name="KZKFK"/>
+                          <xs:element type="xs:string" name="VRVEZ"/>
+                          <xs:element type="xs:string" name="VBAMG"/>
+                          <xs:element type="xs:string" name="VBEAZ"/>
+                          <xs:element type="xs:string" name="LIZYK"/>
+                          <xs:element type="xs:string" name="BWSCL"/>
+                          <xs:element type="xs:string" name="KAUTB"/>
+                          <xs:element type="xs:string" name="KORDB"/>
+                          <xs:element type="xs:string" name="STAWN"/>
+                          <xs:element type="xs:string" name="HERKL"/>
+                          <xs:element type="xs:string" name="HERKR"/>
+                          <xs:element type="xs:string" name="EXPME"/>
+                          <xs:element type="xs:string" name="MTVER"/>
+                          <xs:element type="xs:string" name="PRCTR"/>
+                          <xs:element type="xs:string" name="TRAME"/>
+                          <xs:element type="xs:string" name="MRPPP"/>
+                          <xs:element type="xs:string" name="SAUFT"/>
+                          <xs:element type="xs:string" name="FXHOR"/>
+                          <xs:element type="xs:string" name="VRMOD"/>
+                          <xs:element type="xs:string" name="VINT1"/>
+                          <xs:element type="xs:string" name="VINT2"/>
+                          <xs:element type="xs:string" name="STLAL"/>
+                          <xs:element type="xs:string" name="STLAN"/>
+                          <xs:element type="xs:string" name="PLNNR"/>
+                          <xs:element type="xs:string" name="APLAL"/>
+                          <xs:element type="xs:string" name="LOSGR"/>
+                          <xs:element type="xs:string" name="SOBSK"/>
+                          <xs:element type="xs:string" name="FRTME"/>
+                          <xs:element type="xs:string" name="LGPRO"/>
+                          <xs:element type="xs:string" name="DISGR"/>
+                          <xs:element type="xs:string" name="KAUSF"/>
+                          <xs:element type="xs:string" name="QZGTP"/>
+                          <xs:element type="xs:string" name="TAKZT"/>
+                          <xs:element type="xs:string" name="RWPRO"/>
+                          <xs:element type="xs:string" name="COPAM"/>
+                          <xs:element type="xs:string" name="ABCIN"/>
+                          <xs:element type="xs:string" name="AWSLS"/>
+                          <xs:element type="xs:string" name="STDPD"/>
+                          <xs:element type="xs:string" name="SFEPR"/>
+                          <xs:element type="xs:string" name="XMCNG"/>
+                          <xs:element type="xs:string" name="QSSYS"/>
+                          <xs:element type="xs:string" name="LFRHY"/>
+                          <xs:element type="xs:string" name="RDPRF"/>
+                          <xs:element type="xs:string" name="VRBMT"/>
+                          <xs:element type="xs:string" name="VRBWK"/>
+                          <xs:element type="xs:string" name="VRBDT"/>
+                          <xs:element type="xs:string" name="VRBFK"/>
+                          <xs:element type="xs:string" name="AUTRU"/>
+                          <xs:element type="xs:string" name="PREFE"/>
+                          <xs:element type="xs:string" name="PRENC"/>
+                          <xs:element type="xs:string" name="PRENO"/>
+                          <xs:element type="xs:string" name="PREND"/>
+                          <xs:element type="xs:string" name="PRENE"/>
+                          <xs:element type="xs:string" name="PRENG"/>
+                          <xs:element type="xs:string" name="ITARK"/>
+                          <xs:element type="xs:string" name="PRFRQ"/>
+                          <xs:element type="xs:string" name="KZKUP"/>
+                          <xs:element type="xs:string" name="STRGR"/>
+                          <xs:element type="xs:string" name="LGFSB"/>
+                          <xs:element type="xs:string" name="SCHGT"/>
+                          <xs:element type="xs:string" name="CCFIX"/>
+                          <xs:element type="xs:string" name="EPRIO"/>
+                          <xs:element type="xs:string" name="QMATA"/>
+                          <xs:element type="xs:string" name="PLNTY"/>
+                          <xs:element type="xs:string" name="MMSTA"/>
+                          <xs:element type="xs:string" name="SFCPF"/>
+                          <xs:element type="xs:string" name="SHFLG"/>
+                          <xs:element type="xs:string" name="SHZET"/>
+                          <xs:element type="xs:string" name="MDACH"/>
+                          <xs:element type="xs:string" name="KZECH"/>
+                          <xs:element type="xs:string" name="MMSTD"/>
+                          <xs:element type="xs:string" name="MFRGR"/>
+                          <xs:element type="xs:string" name="FVIDK"/>
+                          <xs:element type="xs:string" name="INDUS"/>
+                          <xs:element type="xs:string" name="MOWNR"/>
+                          <xs:element type="xs:string" name="MOGRU"/>
+                          <xs:element type="xs:string" name="CASNR"/>
+                          <xs:element type="xs:string" name="GPNUM"/>
+                          <xs:element type="xs:string" name="STEUC"/>
+                          <xs:element type="xs:string" name="FABKZ"/>
+                          <xs:element type="xs:string" name="MATGR"/>
+                          <xs:element type="xs:string" name="LOGGR"/>
+                          <xs:element type="xs:string" name="VSPVB"/>
+                          <xs:element type="xs:string" name="DPLFS"/>
+                          <xs:element type="xs:string" name="DPLPU"/>
+                          <xs:element type="xs:string" name="DPLHO"/>
+                          <xs:element type="xs:string" name="MINLS"/>
+                          <xs:element type="xs:string" name="MAXLS"/>
+                          <xs:element type="xs:string" name="FIXLS"/>
+                          <xs:element type="xs:string" name="LTINC"/>
+                          <xs:element type="xs:string" name="COMPL"/>
+                          <xs:element type="xs:string" name="CONVT"/>
+                          <xs:element type="xs:string" name="FPRFM"/>
+                          <xs:element type="xs:string" name="SHPRO"/>
+                          <xs:element type="xs:string" name="FXPRU"/>
+                          <xs:element type="xs:string" name="KZPSP"/>
+                          <xs:element type="xs:string" name="OCMPF"/>
+                          <xs:element type="xs:string" name="APOKZ"/>
+                          <xs:element type="xs:string" name="AHDIS"/>
+                          <xs:element type="xs:string" name="EISLO"/>
+                          <xs:element type="xs:string" name="NCOST"/>
+                          <xs:element type="xs:string" name="MEGRU"/>
+                          <xs:element type="xs:string" name="ROTATION_DATE"/>
+                          <xs:element type="xs:string" name="UCHKZ"/>
+                          <xs:element type="xs:string" name="UCMAT"/>
+                          <xs:element type="xs:string" name="IUID_RELEVANT"/>
+                          <xs:element type="xs:string" name="IUID_TYPE"/>
+                          <xs:element type="xs:string" name="UID_IEA"/>
+                          <xs:element type="xs:string" name="SGT_COVS"/>
+                          <xs:element type="xs:string" name="SGT_STATC"/>
+                          <xs:element type="xs:string" name="SGT_PRCM"/>
+                          <xs:element type="xs:string" name="SGT_CHINT"/>
+                          <xs:element type="xs:string" name="SGT_STK_PRT"/>
+                          <xs:element type="xs:string" name="SGT_DEFSC"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="EDI_DS40" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="MANDT"/>
+                    <xs:element type="xs:int" name="DOCNUM"/>
+                    <xs:element type="xs:int" name="LOGDAT"/>
+                    <xs:element type="xs:int" name="LOGTIM"/>
+                    <xs:element type="xs:byte" name="STATUS"/>
+                    <xs:element type="xs:string" name="STAMQU" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAMID" minOccurs="0"/>
+                    <xs:element type="xs:byte" name="STAMNO"/>
+                    <xs:element type="xs:string" name="STATYP" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA1" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA2" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA3" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STAPA4" minOccurs="0"/>
+                    <xs:element type="xs:string" name="STATXT" minOccurs="0"/>
+                    <xs:element type="xs:string" name="UNAME"/>
+                    <xs:element type="xs:string" name="REPID" minOccurs="0"/>
+                    <xs:element type="xs:byte" name="SEGNUM"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
