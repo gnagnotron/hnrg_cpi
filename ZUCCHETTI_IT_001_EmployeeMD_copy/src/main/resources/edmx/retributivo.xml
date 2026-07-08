@@ -1,0 +1,34 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="BODY">
+    <xs:complexType>
+      <xs:sequence>
+	  
+        <xs:element type="xs:string" name="VARESULT" minOccurs="0"/>		
+		<xs:element type="xs:string" name="IDWAGETP" minOccurs="0"/>
+		<xs:element type="xs:string" name="FLSOSP" minOccurs="0"/>
+		<xs:element type="xs:string" name="FLMONTHWT" minOccurs="0"/>
+		<xs:element type="xs:string" name="DTENDVL55" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY58" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY59" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY60" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY50" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY48" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY37" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY38" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY41" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY42" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY43" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY44" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY45" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY39" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY46" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY47" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY50" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY01" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY49" minOccurs="0"/>
+		<xs:element type="xs:string" name="VAELEPAY60" minOccurs="0"/>
+
+       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

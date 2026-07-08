@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="BODY">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ANSURNAM" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANNAME" type="xs:string"/>
+        <xs:element minOccurs="0" name="DTBIRTH" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDCITYBT" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDSTATEBT" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDSTATERS" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDIDENTIFP" type="xs:string"/>
+        <xs:element minOccurs="0" name="TPSEX" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDMARITAL" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDSTATECTY" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANADDRESRS" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANCIVICNRS" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANZIPCODRS" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDCITYRS" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANEMAIL" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANEMAILRS" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDSTUDY" type="xs:string"/>
+        <xs:element minOccurs="0" name="DTASSUMPT" type="xs:string"/>
+        <xs:element minOccurs="0" name="DTLAYOFF" type="xs:string"/>
+        <xs:element minOccurs="0" name="DTEXPDT" type="xs:string"/>
+        <xs:element minOccurs="0" name="DTEXPTRIES" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDLVAGRMNT" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDNATREL" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDQUAGRMNT" type="xs:string"/>
+        <xs:element minOccurs="0" name="TPPARTTIME" type="xs:string"/>
+        <xs:element minOccurs="0" name="PEPARTTIME" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDDEPENDEN" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDCOSTCNT" type="xs:string"/>
+        <xs:element minOccurs="0" name="H1NPOSZ1" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDLEGALNAT" type="xs:string"/>
+        <xs:element minOccurs="0" name="TPIDENTIFP" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDPAY" type="xs:string"/>
+        <xs:element minOccurs="0" name="FLMAIN" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDIBANCNTY" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDCURRENCY2" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDIBANDIGT" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANBCODE" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDABI" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDCAB" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANCHKACCEM" type="xs:string"/>
+        <xs:element minOccurs="0" name="TPRELATION3" type="xs:string"/>
+        <xs:element minOccurs="0" name="TPCONTRA" type="xs:string"/>
+        <xs:element minOccurs="0" name="H1CQUALPREVL" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDPART2" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDTPSUBJ" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDGRPEM" type="xs:string"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="H1CELEMPAGA" type="xs:string"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="H1IELEMPAGA" type="xs:string"/>
+        <xs:element minOccurs="0" name="H1ELDFINEVAL" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDPROFESS" type="xs:string"/>
+        <xs:element minOccurs="0" name="H1CVOCE" type="xs:string"/>
+        <xs:element minOccurs="0" name="H1NPROGV" type="xs:string"/>
+        <xs:element minOccurs="0" name="H1CTIPOVOCE" type="xs:string"/>
+        <xs:element minOccurs="0" name="H1IVOCE" type="xs:string"/>
+        <xs:element minOccurs="0" name="H1CTIPOCOMPV" type="xs:string"/>
+        <xs:element minOccurs="0" name="H1CMODLGENRN" type="xs:string"/>
+        <xs:element minOccurs="0" name="H1CPIATABL2" type="xs:string"/>
+        <xs:element minOccurs="0" name="H1CFREQ" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

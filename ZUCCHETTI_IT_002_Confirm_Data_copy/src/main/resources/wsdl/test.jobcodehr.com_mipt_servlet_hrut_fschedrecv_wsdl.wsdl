@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://hrut_fschedrecv.ws.localhost/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://hrut_fschedrecv.ws.localhost/" name="SitepainterSOAPController">
+<types>
+<xsd:schema xmlns:tns="http://hrut_fschedrecv.ws.localhost/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://hrut_fschedrecv.ws.localhost/">
+<xsd:element name="hrut_fschedrecv_Run">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="m_UserName" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="m_Password" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="m_Company" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pIDPROCED" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pFLSELRECDT" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pIDRECDEF" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pIDCOMPANYF" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pIDCOMPANYT" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pFLELABWRT" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pFLPRTERR" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pFLCHKFIELD" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pFLDELDTPR" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pFLDELDTNOI" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pFLIDSUBIDE" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pFLAUTIDSUB" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pTPELABVALUE" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pFLINSAUT" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="hrut_fschedrecv_RunResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="return" type="xsd:string" minOccurs="0" /> 
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</types>
+<message name="hrut_fschedrecv_Run">
+<part name="parameters" element="tns:hrut_fschedrecv_Run" />
+</message>
+<message name="hrut_fschedrecv_RunResponse">
+<part name="parameters" element="tns:hrut_fschedrecv_RunResponse" />
+</message>
+<portType name="hrut_fschedrecvWS">
+<operation name="hrut_fschedrecv_Run">
+<input name="hrut_fschedrecv_Run" message="tns:hrut_fschedrecv_Run" />
+<output name="hrut_fschedrecv_RunResponse" message="tns:hrut_fschedrecv_RunResponse" />
+</operation>
+</portType>
+<binding name="hrut_fschedrecvWSPortBinding" type="tns:hrut_fschedrecvWS">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+<operation name="hrut_fschedrecv_Run">
+<soap:operation soapAction="" />
+<input name="hrut_fschedrecv_Run" >
+<soap:body use="literal" />
+</input>
+<output name="hrut_fschedrecv_RunResponse" >
+<soap:body use="literal" />
+</output>
+</operation>
+</binding>
+<service name="hrut_fschedrecvWSService">
+<port name="hrut_fschedrecvWSPort" binding="tns:hrut_fschedrecvWSPortBinding">
+<soap:address location="https://test.jobcodehr.com:443/mipt/servlet/hrut_fschedrecv" />
+</port>
+</service>
+</definitions>

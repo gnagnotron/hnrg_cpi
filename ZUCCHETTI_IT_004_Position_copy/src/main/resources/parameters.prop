@@ -1,0 +1,23 @@
+#
+#Tue Nov 18 09:16:26 UTC 2025
+SFSF_Authentication=OAuth2SAMLBearer
+address=http\://example.com
+Address=https\://example.com
+Scheduler=<row><cell>dateType</cell><cell>SIMPLE</cell></row><row><cell>hourValue</cell><cell>12</cell></row><row><cell>minutesValue</cell><cell>25</cell></row><row><cell>timeType</cell><cell>ON_TIME</cell></row><row><cell>timeZone</cell><cell>( UTC 1\:00 ) Central European Standard Time(Europe/Rome)</cell></row><row><cell>throwExceptionOnExpiry</cell><cell>true</cell></row><row><cell>second</cell><cell>0</cell></row><row><cell>minute</cell><cell>4</cell></row><row><cell>hour</cell><cell>6,14</cell></row><row><cell>day_of_month</cell><cell>?</cell></row><row><cell>month</cell><cell>*</cell></row><row><cell>dayOfWeek</cell><cell>*</cell></row><row><cell>year</cell><cell>*</cell></row><row><cell>startAt</cell><cell></cell></row><row><cell>endAt</cell><cell></cell></row><row><cell>attributeBehaviour</cell><cell>isThrowExceptionOnExpiryVisible,isScheduleAdvancedVisible,isScheduleAdvancedStartEndVisible,isScheduleSimpleVisible</cell></row><row><cell>triggerType</cell><cell>cron</cell></row><row><cell>noOfSchedules</cell><cell>1</cell></row><row><cell>schedule1</cell><cell>simple.repeat\=NONE&amp;trigger.timeZone\=Europe/Rome</cell></row>
+variableName_lastModDateTime=position_lastDateTime
+Username_credential=ZUCCHETTI_UserName
+executionDate=${date\:now\:yyyy-MM-dd}
+Zucchetti_Address=http\://example.com
+defaultLastModDateTime=2025-11-17T00\:00\:00Z
+logState=true
+sendFile=false
+sendToZucchetti=false
+isLogActive=true
+logName=Log 2 - Loop ${property.CamelSplitIndex} - Send to Zuchetti
+ResponceLog=Log 3 - Loop ${property.CamelSplitIndex} - Response
+lastUpdate=${date\:now\:yyyy-MM-dd&apos;T&apos;HH\:mm\:ss&apos;Z&apos;}
+Password_credential=ZUCCHETTI_Password
+SFSF_Credential=Oauth_adminApiGroup-LVMHTT30
+SFSF_Address=https\://api55preview.sapsf.eu
+LogName=Log 2 - Loop ${property.CamelSplitIndex} - Send to Zuchetti
+https\://example=

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://hrut_brecvinsertrec.ws.localhost/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://hrut_brecvinsertrec.ws.localhost/" name="SitepainterSOAPController">
+<types>
+<xsd:schema xmlns:tns="http://hrut_brecvinsertrec.ws.localhost/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://hrut_brecvinsertrec.ws.localhost/">
+<xsd:element name="hrut_brecvinsertrec_Run">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="m_UserName" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="m_Password" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="m_Company" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+<xsd:element name="pFILE" type="xsd:string" minOccurs="1" maxOccurs="1" /> 
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="hrut_brecvinsertrec_RunResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="return" type="xsd:string" minOccurs="0" /> 
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+</types>
+<message name="hrut_brecvinsertrec_Run">
+<part name="parameters" element="tns:hrut_brecvinsertrec_Run" />
+</message>
+<message name="hrut_brecvinsertrec_RunResponse">
+<part name="parameters" element="tns:hrut_brecvinsertrec_RunResponse" />
+</message>
+<portType name="hrut_brecvinsertrecWS">
+<operation name="hrut_brecvinsertrec_Run">
+<input name="hrut_brecvinsertrec_Run" message="tns:hrut_brecvinsertrec_Run" />
+<output name="hrut_brecvinsertrec_RunResponse" message="tns:hrut_brecvinsertrec_RunResponse" />
+</operation>
+</portType>
+<binding name="hrut_brecvinsertrecWSPortBinding" type="tns:hrut_brecvinsertrecWS">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+<operation name="hrut_brecvinsertrec_Run">
+<soap:operation soapAction="" />
+<input name="hrut_brecvinsertrec_Run" >
+<soap:body use="literal" />
+</input>
+<output name="hrut_brecvinsertrec_RunResponse" >
+<soap:body use="literal" />
+</output>
+</operation>
+</binding>
+<service name="hrut_brecvinsertrecWSService">
+<port name="hrut_brecvinsertrecWSPort" binding="tns:hrut_brecvinsertrecWSPortBinding">
+<soap:address location="https://test.jobcodehr.com:443/mipt/servlet/hrut_brecvinsertrec" />
+</port>
+</service>
+</definitions>

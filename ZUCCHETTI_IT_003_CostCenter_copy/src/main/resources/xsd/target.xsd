@@ -1,0 +1,20 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name = "mappedCostCenter">
+	<xs:complexType>
+		<xs:element name = "cotg_tcostcenter" minOccurs = "0" maxOccurs = "unbounded">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element type="xs:string" name="cust_CoCd"/>
+					<xs:element type="xs:string" name="externalCode"/>
+					<xs:element type="xs:string" name="startDate"/>
+					<xs:element type="xs:string" name="endDate"/>
+					<xs:element type="xs:string" name="name"/>
+	
+				</xs:sequence>
+
+			</xs:complexType>
+
+	</xs:element>
+</xs:schema>
+
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="BODY">
+    <xs:complexType>
+      <xs:sequence>
+	  
+	    <xs:element maxOccurs="1" minOccurs="1" name="AZIENDA" type="xs:string"/>
+		<xs:element maxOccurs="1" minOccurs="1" name="DIPENDENTE" type="xs:string"/>
+		<xs:element maxOccurs="1" minOccurs="1" name="DATA_VALIDITA" type="xs:string"/>
+        <xs:element minOccurs="0" name="FLACTIVE" type="xs:string"/>		
+		<xs:element minOccurs="0" name="FLCHECKOBB" type="xs:string"/>
+		<xs:element minOccurs="0" name="FLRELATION" type="xs:string"/>
+		<xs:element minOccurs="0" name="ANPROVINRS" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDINTERNAL" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDCODAL00S" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDCAUSEASS" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDEMPSOMM" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDBUSINESS" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDLOCALUT" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDINTORD11" type="xs:string"/>
+		<xs:element minOccurs="0" name="FLDEFERRED" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDLANGUAGE" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDAGRMNT" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDBRANCH" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDACTIVITY11" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDTBLHH" type="xs:string"/>
+		<xs:element minOccurs="0" name="TPSUBJTFR" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDRULETFR" type="xs:string"/>
+		<xs:element minOccurs="0" name="TPPAY" type="xs:string"/>
+		<xs:element minOccurs="0" name="TPADDRESS" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDUSERNAME" type="xs:string"/>
+		<xs:element minOccurs="0" name="ANPROVIN" type="xs:string"/>
+		<xs:element minOccurs="0" name="ANMOBILTEL" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDPART3" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDPART5" type="xs:string"/>
+		<xs:element minOccurs="0" name="DTSUBSMAW11" type="xs:string"/>
+		<xs:element minOccurs="0" name="DTSTARTSW11" type="xs:string"/>
+		<xs:element minOccurs="0" name="DTENDSW11" type="xs:string"/>
+		<xs:element minOccurs="0" name="SI002" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDPART6" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDCATPROT" type="xs:string"/>
+		<xs:element minOccurs="0" name="PEDISABLED11" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDCOMPSOM11" type="xs:string"/>
+		<xs:element minOccurs="0" name="ANADDRESRS" type="xs:string"/>
+		<xs:element minOccurs="0" name="ANADDRES" type="xs:string"/>
+		<xs:element minOccurs="0" name="ANZIPCODRS" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDSTATE" type="xs:string"/>
+		<xs:element minOccurs="0" name="IDCITY" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANSURNAM" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANNAME" type="xs:string"/>
+        <xs:element minOccurs="0" name="DTBIRTH" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDCITYBT" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDSTATEBT" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDSTATERS" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDIDENTIFP" type="xs:string"/>
+        <xs:element minOccurs="0" name="TPSEX" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDMARITAL" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDSTATECTY" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANCIVICNRS" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANZIPCOD" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDCITYRS" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANEMAIL" type="xs:string"/>
+        <xs:element minOccurs="0" name="ANEMAILRS" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDSTUDY" type="xs:string"/> 
+        <xs:element minOccurs="0" name="DTASSUMPT" type="xs:string"/>
+        <xs:element minOccurs="0" name="DTLAYOFF" type="xs:string"/>
+        <xs:element minOccurs="0" name="DTEXPDT" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDLVAGRMNT" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDNATREL" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDQUAGRMNT" type="xs:string"/>
+        <xs:element minOccurs="0" name="TPPARTTIME" type="xs:string"/>
+        <xs:element minOccurs="0" name="PEPARTTIME" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDDEPENDEN" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDCOSTCNT" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDLEGALNAT" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDCURRENCY" type="xs:string"/>
+        <xs:element minOccurs="0" name="TPRELATION" type="xs:string"/>
+        <xs:element minOccurs="0" name="TPCONTRA" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDTPSUBJ" type="xs:string"/>
+        <xs:element minOccurs="0" name="IDGRPEM" type="xs:string"/>
+		<xs:element minOccurs="0" name="VAELEPAY60" type="xs:string"/>
+       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
