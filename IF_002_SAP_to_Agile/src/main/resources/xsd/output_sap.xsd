@@ -1,0 +1,51 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Receive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idocData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EDI_DC40">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="TABNAM"/>
+                    <xs:element type="xs:string" name="MANDT"/>
+                    <xs:element type="xs:string" name="DOCNUM"/>
+                    <xs:element type="xs:string" name="DOCREL"/>
+                    <xs:element type="xs:string" name="STATUS"/>
+                    <xs:element type="xs:string" name="DIRECT"/>
+                    <xs:element type="xs:string" name="OUTMOD"/>
+                    <xs:element type="xs:string" name="IDOCTYP"/>
+                    <xs:element type="xs:string" name="MESTYP"/>
+                    <xs:element type="xs:string" name="SNDPOR"/>
+                    <xs:element type="xs:string" name="SNDPRT"/>
+                    <xs:element type="xs:string" name="SNDPRN"/>
+                    <xs:element type="xs:string" name="RCVPOR"/>
+                    <xs:element type="xs:string" name="RCVPRT"/>
+                    <xs:element type="xs:string" name="RCVPRN"/>
+                    <xs:element type="xs:string" name="CREDAT"/>
+                    <xs:element type="xs:string" name="CRETIM"/>
+                    <xs:element type="xs:string" name="SERIAL"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ZE1EDKFILE1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="DATAHEADERCOLUMN_SEGNAM"/>
+                    <xs:element type="xs:string" name="DATAHEADERCOLUMN_MANDT"/>
+                    <xs:element type="xs:string" name="DATAHEADERCOLUMN_DOCNUM"/>
+                    <xs:element type="xs:string" name="DATAHEADERCOLUMN_SEGNUM"/>
+                    <xs:element type="xs:string" name="DATAHEADERCOLUMN_PSGNUM"/>
+                    <xs:element type="xs:string" name="DATAHEADERCOLUMN_HLEVEL"/>
+                    <xs:element type="xs:string" name="ZRECDATA"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

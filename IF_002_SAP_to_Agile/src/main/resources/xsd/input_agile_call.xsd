@@ -1,0 +1,80 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="messageId" minOccurs="0"/>
+        <xs:element type="xs:string" name="messageName" minOccurs="0"/>
+        <xs:element type="xs:string" name="sender" minOccurs="0"/>
+        <xs:element type="xs:string" name="timestamp" minOccurs="0"/>
+        <xs:element type="xs:string" name="target" minOccurs="0"/>
+        <xs:element type="xs:string" name="disableAllWarnings" minOccurs="0"/>
+        <xs:element name="warningResolution" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="id" minOccurs="0"/>
+              <xs:element type="xs:string" name="resolution" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sessionParameters" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="id" minOccurs="0"/>
+              <xs:element name="property" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="propertyName" minOccurs="0"/>
+                    <xs:element type="xs:string" name="propertyValue" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="generalParameters" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="id" minOccurs="0"/>
+              <xs:element name="property" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="propertyName" minOccurs="0"/>
+                    <xs:element type="xs:string" name="propertyValue" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="requests" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="classIdentifier" minOccurs="0"/>
+              <xs:element type="xs:string" name="objectNumber" minOccurs="0"/>
+              <xs:element type="xs:string" name="referencedObjKey" minOccurs="0"/>
+              <xs:element name="data" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="objectReferentId" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="classId" minOccurs="0"/>
+                          <xs:element type="xs:string" name="className" minOccurs="0"/>
+                          <xs:element type="xs:string" name="classDisplayName" minOccurs="0"/>
+                          <xs:element type="xs:string" name="objectId" minOccurs="0"/>
+                          <xs:element type="xs:string" name="objectName" minOccurs="0"/>
+                          <xs:element type="xs:string" name="objectVersion" minOccurs="0"/>
+                          <xs:element type="xs:string" name="version" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

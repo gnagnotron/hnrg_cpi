@@ -1,0 +1,8 @@
+#
+#Wed Jul 08 14:46:27 UTC 2026
+credentials_agile_dev=
+credentials_agile_prd=IF_002_Agile_PRD
+environment=TEST
+pd_inbound=/AGILE/IF02
+url_agile_service_dev=https\://emobility-plm.abb.com/prod/CoreService/services/BusinessObject
+url_agile_service_prod=http\://52.51.228.26\:7001/CoreService/services/BusinessObject

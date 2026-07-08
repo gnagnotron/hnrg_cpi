@@ -1,0 +1,14 @@
+#
+#Wed Jul 08 14:46:14 UTC 2026
+credentials=prd_agile
+credentials_ecc=scpi_user_p1p
+credentials_s4=DS4_110
+mandt_ecc=sap-client\=010
+mandt_s4=sap-client\=110
+mode=PROD
+s4_cred=PS4_100
+s4_host=vhab2ps4ci.sap.e-mobility.abb.com\:44300
+s4_mandt=100
+scc_locationid=PS4
+url_cc_ecc=http\://xa-s-eccprd1\:8000/sap/bc/idoc_xml
+url_cc_s4=http\://vhab2ds4ci.sap.e-mobility.abb.com\:44300/sap/bc/idoc_xml

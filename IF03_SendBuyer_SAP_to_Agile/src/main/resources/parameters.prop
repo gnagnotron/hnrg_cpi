@@ -1,0 +1,7 @@
+#
+#Wed Jul 08 14:46:35 UTC 2026
+sftp_filename=buyers.txt
+sftp_folder=../../u01/interfacce/prod/CPI_grpacquisti
+sftp_host=130.61.173.250
+sftp_key=emobility_agile_prod
+sftp_username=scambiocpi

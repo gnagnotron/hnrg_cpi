@@ -1,0 +1,14 @@
+#
+#Wed Jul 08 14:46:22 UTC 2026
+credentials=prd_agile
+credentials_ecc=scpi_user_p1p
+credentials_s4=pouser_hec_dev
+mandt_ecc=sap-client\=010
+mandt_s4=sap-client\=400
+mode=PROD
+sftp_folder=../../u01/interfacce/prod/CPI
+sftp_host=130.61.173.250
+sftp_key=emobility_agile_prod
+sftp_user=scambiocpi
+url_cc_ecc=http\://xa-s-eccprd1\:8000/sap/bc/idoc_xml
+url_cc_s4=http\://vhfmrps4ci.hec.fimer.com\:8000/sap/bc/idoc_xml

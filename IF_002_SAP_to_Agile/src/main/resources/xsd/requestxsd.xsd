@@ -1,0 +1,190 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="messageId">
+          <xs:annotation>
+            <xs:documentation>Optional:</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element type="xs:string" name="messageName">
+          <xs:annotation>
+            <xs:documentation>Optional:</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element type="xs:string" name="sender">
+          <xs:annotation>
+            <xs:documentation>Optional:</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element type="xs:string" name="timestamp">
+          <xs:annotation>
+            <xs:documentation>Optional:</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element type="xs:string" name="target">
+          <xs:annotation>
+            <xs:documentation>Optional:</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element type="xs:string" name="disableAllWarnings">
+          <xs:annotation>
+            <xs:documentation>Optional:</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="warningResolution">
+          <xs:annotation>
+            <xs:documentation>Zero or more repetitions:</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="id"/>
+              <xs:element type="xs:string" name="resolution"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sessionParameters">
+          <xs:annotation>
+            <xs:documentation>Zero or more repetitions:</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="id"/>
+              <xs:element name="property">
+                <xs:annotation>
+                  <xs:documentation>Zero or more repetitions:</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="propertyName">
+                      <xs:annotation>
+                        <xs:documentation>Optional:</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element type="xs:string" name="propertyValue">
+                      <xs:annotation>
+                        <xs:documentation>Optional:</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="generalParameters">
+          <xs:annotation>
+            <xs:documentation>Zero or more repetitions:</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="id"/>
+              <xs:element name="property">
+                <xs:annotation>
+                  <xs:documentation>Zero or more repetitions:</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="propertyName">
+                      <xs:annotation>
+                        <xs:documentation>Optional:</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element type="xs:string" name="propertyValue">
+                      <xs:annotation>
+                        <xs:documentation>Optional:</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="requests">
+          <xs:annotation>
+            <xs:documentation>1 or more repetitions:</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="classIdentifier"/>
+              <xs:element type="xs:string" name="objectNumber"/>
+              <xs:element type="xs:string" name="referencedObjKey">
+                <xs:annotation>
+                  <xs:documentation>Optional:</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="data">
+                <xs:annotation>
+                  <xs:documentation>Optional:</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Message_Desc">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:short" name="attributeId"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:byte" name="rowId"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="options">
+                <xs:annotation>
+                  <xs:documentation>Zero or more repetitions:</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="propertyName">
+                      <xs:annotation>
+                        <xs:documentation>Optional:</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element type="xs:string" name="propertyValue">
+                      <xs:annotation>
+                        <xs:documentation>Optional:</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="inputParameters">
+                <xs:annotation>
+                  <xs:documentation>Zero or more repetitions:</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="id"/>
+                    <xs:element name="property">
+                      <xs:annotation>
+                        <xs:documentation>Zero or more repetitions:</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="propertyName">
+                            <xs:annotation>
+                              <xs:documentation>Optional:</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element type="xs:string" name="propertyValue">
+                            <xs:annotation>
+                              <xs:documentation>Optional:</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
