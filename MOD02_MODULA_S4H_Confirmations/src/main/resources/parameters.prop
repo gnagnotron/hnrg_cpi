@@ -1,0 +1,7 @@
+#
+#Wed Jul 08 13:32:55 UTC 2026
+LogState=true
+s4.credential=PS4_100
+s4.host=vhab2ps4ci.sap.e-mobility.abb.com\:44300
+s4.locationid=PS4
+s4.mandt=100

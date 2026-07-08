@@ -1,0 +1,5 @@
+#
+#Wed Jul 08 13:32:52 UTC 2026
+LogState=true
+modula.host=http\://wmsmodula\:443/api/jobs/CFG-IMP-ESEGUI
+scc.locationid=PS4
